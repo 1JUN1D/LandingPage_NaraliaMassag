@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: #003554;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .confirmation-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(14, 202, 238, 0.3);
+            border: 2px solid rgba(14, 202, 238, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .success-icon {
+            font-size: 60px;
+            color: #0ECAEE;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #0ECAEE;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .countdown {
+            font-size: 18px;
+            color: #0ECAEE;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #0ECAEE 0%, #00D4FF 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 202, 238, 0.4);
+        }
+        
+        .manual-link {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .manual-link a {
+            color: #0ECAEE;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="success-icon">✅</div>
+        <h1>Booking Confirmed!</h1>
+        <p class="message">
+            Thank you for booking your spa appointment with us! We're excited to provide you with an amazing relaxation experience.
+        </p>
+        
+        <div class="countdown">
+            Redirecting to WhatsApp in <span id="countdown">5</span> seconds...
+        </div>
+        
+        <a href="#" id="whatsappBtn" class="whatsapp-btn">
+            📱 Continue to WhatsApp
+        </a>
+        
+        <div class="manual-link">
+            <p>WhatsApp not opening automatically? <a href="#" id="manualLink">Click here</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener parámetros de la URL
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
+        
+        // Obtener información de la reserva desde los parámetros URL
+        const serviceName = getURLParameter('service') || 'spa service';
+        const appointmentDate = getURLParameter('date') || '';
+        const appointmentTime = getURLParameter('time') || '';
+        const clientName = getURLParameter('name') || '';
+        
+        // Crear mensaje personalizado para WhatsApp
+        function createWhatsAppMessage() {
+            const baseMessage = `Hello! I just made a booking through your website for a ${serviceName}.`;
+            
+            let detailsMessage = '';
+            if (appointmentDate && appointmentTime) {
+                detailsMessage = ` My appointment is scheduled for ${appointmentDate} at ${appointmentTime}.`;
+            }
+            if (clientName) {
+                detailsMessage += ` My name is ${clientName}.`;
+            }
+            
+            const finalMessage = baseMessage + detailsMessage + ` I'm looking forward to my spa experience! Could you please confirm the details?`;
+            
+            return encodeURIComponent(finalMessage);
+        }
+        
+        // Tu número de WhatsApp (reemplaza con el tuyo)
+        const whatsappNumber = '573138772082'; // Formato: código país + número sin +
+        
+        // Crear URL de WhatsApp
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${createWhatsAppMessage()}`;
+        
+        // Asignar URL a los botones
+        document.getElementById('whatsappBtn').href = whatsappURL;
+        document.getElementById('manualLink').href = whatsappURL;
+        
+        // Contador regresivo y redirección automática
+        let timeLeft = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = whatsappURL;
+            }
+        }, 1000);
+        
+        // Evento para botón manual
+        document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            clearInterval(timer);
+            window.location.href = whatsappURL;
+        });
+        
+        document.getElementById('manualLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            clearInterval(timer);
+            window.location.href = whatsappURL;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massage Spa Natalia - Bienestar y Relajación de Lujo</title>
+    
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX042ELFV5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HX042ELFV5');
+    </script>
+    
+    <!-- Google tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17389033791"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17389033791');
+    </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1529369061395928');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1529369061395928&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <!-- FUNCIONES DE TRACKING PARA GOOGLE ADS Y META -->
+    <script>
+    // Función para tracking de WhatsApp (Contacto)
+    function trackWhatsAppLead(whatsappUrl, eventLabel) {
+        try {
+            // Google Ads Conversion
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17389033791/3XoUCLrD764bEL-y3uNA',
+                'value': 10000,
+                'currency': 'COP',
+                'event_callback': function() {
+                    window.open(whatsappUrl, '_blank');
+                }
+            });
+            
+            // Meta Pixel Event
+            if (typeof fbq === 'function') {
+                fbq('trackCustom', 'WhatsAppContactSpa', {
+                    event_label: eventLabel,
+                    value: 10000,
+                    currency: 'COP'
+                });
+            }
+            
+            // Google Analytics Event
+            gtag('event', 'generate_lead', {
+                'event_category': 'engagement',
+                'event_label': eventLabel,
+                'value': 1000
+            });
+            
+        } catch (error) {
+            console.error('Error en tracking:', error);
+            window.open(whatsappUrl, '_blank');
+        }
+        return false;
+    }
+    
+    // Función para tracking de Calendly (Reserva de cita)
+    function trackCalendlyReserva(serviceType, serviceValue) {
+        try {
+            // Google Ads Conversion
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17389033791/1YyICNLh6K4bEL-y3uNA',
+                'value': serviceValue,
+                'currency': 'COP',
+                'transaction_id': Date.now(),
+                'event_label': serviceType
+            });
+            
+            // Meta Pixel Event
+            if (typeof fbq === 'function') {
+                fbq('track', 'Schedule', {
+                    service_name: serviceType,
+                    value: serviceValue,
+                    currency: 'COP',
+                    content_type: 'service'
+                });
+            }
+            
+            // Google Analytics Event
+            gtag('event', 'book_appointment', {
+                'event_category': 'booking',
+                'event_label': serviceType,
+                'value': serviceValue
+            });
+            
+            console.log(`Reserva tracked: ${serviceType} - $${serviceValue}`);
+        } catch (error) {
+            console.error('Error en tracking Calendly:', error);
+        }
+    }
+    
+    // Función auxiliar para eventos personalizados de Meta
+    function fbqTrackCustomEvent(eventName, serviceName, serviceId) {
+        try {
+            if (typeof fbq === 'function') {
+                fbq('trackCustom', eventName, {
+                    service_name: serviceName,
+                    service_id: serviceId,
+                    timestamp: new Date().getTime()
+                });
+                console.log('Evento Meta registrado:', eventName, serviceName);
+            }
+        } catch (error) {
+            console.error('Error al registrar evento Meta:', error);
+        }
+    }
+    </script>
+    
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly badge widget end -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- Audio de fondo -->
+    <audio id="bgMusic" loop>
+        <source src="/Frecuencia de la Salud y Los Milagros _ Repara el ADN _ Tono Solfeggio 528 Hz _ 20 Min x Día MINIMO. [8fUWEKa3rjg].mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="audio-control playing" id="audioControl"></div>
+
+    <div class="container">
+        <header>
+            <button class="btn-header" onclick="scrollToServices()">BOOK NOW</button>
+            <div class="spa-name">Massage Spa Natalia Ruiz</div>
+            <div class="language-switcher">
+                <button class="lang-btn active" onclick="switchLanguage('en')" id="en-btn">English</button>
+                <button class="lang-btn" onclick="switchLanguage('es')" id="es-btn">Español</button>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+        <section class="hero">
+            <h1>
+                Welcome to <span class="highlight">Massage Spa Natalia Ruiz</span>
+            </h1>
+            <p class="hero-subtitle">Your Luxury Wellness and Relaxation Oasis in bogota</p>
+            
+            
+            <div class="banner-placeholder">
+                <img src="/hillarymilena.jpg" alt="Banner" class="banner-image">
+            </div>
+            
+
+            <!--
+            <div class="banner-placeholder">
+                <video autoplay muted loop playsinline class="banner-video">
+                    <source src="/2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            -->
+
+
+            <div class="info-section">
+                <h3>Located in El Poblado, bogota, our spa is easily accessible and designed to offer you a unique wellness experience. We provide private parking and all the amenities to make your visit perfect.</h3>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8547943562303!2d-74.0685591!3d4.6199822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99001246efaf%3A0x7a90089b1465e7a5!2sMassage%20Bogota%20%7C%20Natalia%20Ruiz!5e0!3m2!1ses-419!2sco!4v1762909937651!5m2!1ses-419!2sco" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; border-radius: 10px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="schedule">We're open Monday to Sunday from 8:00 a.m. to 1:00 a.m.</div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn btn-secondary" onclick="scrollToServices()">View Services</button>
+                <button class="btn btn-whatsapp" onclick="scrollToServices()">Book Now</button>
+            </div>
+        </section>
+
+
+
+        <div class="divider"></div>
+
+        <section class="services-section" id="servicios">
+            <h2>Our Services</h2>
+            
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('massages')">Massages</button>
+                <button class="tab" onclick="showTab('four-hands')">4 Hands Massage</button>
+                <button class="tab" onclick="showTab('facials')">Facial Treatments</button>
+
+            <!-- Tab Massages -->
+            <div id="massages" class="tab-content active">
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Therapeutic Massage</div>
+                    <div class="service-description">
+                        A focused treatment designed to address specific muscle tension and pain points. Our therapeutic approach combines various techniques to promote healing, improve circulation, and restore balance to your body's natural alignment.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('TherapeuticClick', 'Therapeutic Massage', 'therapeutic'); trackCalendlyReserva('therapeutic_massage', 242000); openCalendlyTherapeutic()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Deep Tissue Massage</div>
+                    <div class="service-description">
+                        Intensive therapy targeting deeper muscle layers and chronic tension points. Using firm pressure and slow strokes, this treatment helps release muscle knots, improve mobility, and alleviate persistent pain in neck, back, shoulders, and legs.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('DeepTissueClick', 'Deep Tissue Massage', 'deep_tissue'); trackCalendlyReserva('deep_tissue_massage', 242000); openCalendlyDeepTissue()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Deportivo.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Sports Massage</div>
+                    <div class="service-description">
+                        Designed for active individuals and athletes. This treatment focuses on specific muscle groups to enhance performance, prevent injuries, and accelerate recovery. Includes stretching techniques and targeted pressure on overworked areas.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('SportsClick', 'Sports Massage', 'sports'); trackCalendlyReserva('sports_massage', 242000); openCalendlySports()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Relaxing Massage</div>
+                    <div class="service-description">
+                        A gentle, stress-relieving experience designed to calm the mind and deeply relax the body. Using smooth, flowing movements combined with aromatherapy and warm oils to improve circulation and create a sense of complete tranquility.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('RelaxingClick', 'Relaxing Massage', 'relaxing'); trackCalendlyReserva('relaxing_massage', 242000); openCalendlyRelaxing()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Couple.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Couple's Massage</div>
+                    <div class="service-description">
+                        Share a romantic and relaxing experience together. Enjoy simultaneous massages in a tranquil setting designed for two, perfect for couples looking to reconnect and unwind together in a peaceful atmosphere.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$200,000 COP – $66 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$484,000 COP – $128 USD</strong></div>
+                    <div class="price-options">90 Minutes: <strong>$606,000 COP – $160 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('CoupleClick', 'Couple Massage', 'couple'); trackCalendlyReserva('couple_massage', 484000); openCalendlyCouple()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Cupping.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Cupping Massage</div>
+                    <div class="service-description">
+                        Ancient healing technique using specialized cups to create suction on the skin. This treatment improves blood flow, reduces muscle tension, promotes healing, and helps release toxins from deep tissue layers.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('CuppingClick', 'Cupping Massage', 'cupping'); trackCalendlyReserva('cupping_massage', 242000); openCalendlyCupping()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Prenatal.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Prenatal Massage</div>
+                    <div class="service-description">
+                        Gentle and safe massage specially designed for expecting mothers. Relieves lower back pain, leg swelling, shoulder tension, and improves circulation. Performed with comfortable positioning and techniques adapted to each pregnancy stage.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('PrenatalClick', 'Prenatal Massage', 'prenatal'); trackCalendlyReserva('prenatal_massage', 242000); openCalendlyPrenatal()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/PostPartum.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Postpartum Massage</div>
+                    <div class="service-description">
+                        Specialized treatment for new mothers to help the body recover after childbirth. Focuses on relieving muscle tension, improving circulation, reducing swelling, and providing emotional support during this important transition period.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('PostpartumClick', 'Postpartum Massage', 'postpartum'); trackCalendlyReserva('postpartum_massage', 242000); openCalendlyPostpartum()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Descontracturante.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Decontracting Massage</div>
+                    <div class="service-description">
+                        Therapeutic treatment specifically designed to release muscle contractures and chronic tension. Uses targeted pressure and specialized techniques to restore muscle flexibility and eliminate pain caused by prolonged stress or poor posture.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('DecontractingClick', 'Decontracting Massage', 'decontracting'); trackCalendlyReserva('decontracting_massage', 242000); openCalendlyDecontracting()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotStone.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Hot Stone Massage</div>
+                    <div class="service-description">
+                        Luxurious treatment combining traditional massage with heated volcanic stones. The warm stones help penetrate deep into muscles, melting away tension and stress while promoting profound relaxation and improved circulation.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('HotStoneClick', 'Hot Stone Massage', 'hot_stone'); trackCalendlyReserva('hot_stone_massage', 242000); openCalendlyHotStone()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Special Decoration Massage</div>
+                    <div class="service-description">
+                        A uniquely personalized massage experience enhanced with special ambiance and decorative elements. Perfect for celebrations, special occasions, or when you want to create memorable moments in a beautifully customized setting.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('SpecialDecorationClick', 'Special Decoration Massage', 'special_decoration'); trackCalendlyReserva('special_decoration_massage', 242000); openCalendlySpecialDecoration()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotCandle.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Hot Candle Massage</div>
+                    <div class="service-description">
+                        Indulgent treatment using warm, melted candle wax that transforms into luxurious massage oil. The warm wax deeply nourishes the skin while providing a sensory experience that combines aromatherapy with deeply relaxing massage techniques.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('HotCandleClick', 'Hot Candle Massage', 'hot_candle'); trackCalendlyReserva('hot_candle_massage', 242000); openCalendlyHotCandle()">Book Now</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/LomiLomi.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Lomi Lomi Massage</div>
+                    <div class="service-description">
+                        Traditional Hawaiian massage technique using flowing, rhythmic movements that mimic ocean waves. This holistic treatment works on physical, mental, and spiritual levels, promoting deep relaxation and energy flow throughout the body.
+                    </div>
+                    <div class="price-options">30 Minutes: <strong>$121,000 COP – $33 USD</strong></div>
+                    <div class="price-options">1 Hour: <strong>$200,000 COP – $53 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('LomiLomiClick', 'Lomi Lomi Massage', 'lomi_lomi'); trackCalendlyReserva('lomi_lomi_massage', 242000); openCalendlyLomiLomi()">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Tab 4 Hands Massage -->
+            <div id="four-hands" class="tab-content">
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/4Hands.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">4 Hands Massage</div>
+                    <div class="service-description">
+                        Experience the ultimate in luxury and relaxation with our signature 4 hands massage. Two skilled therapists work in perfect synchronization to provide a deeply immersive and therapeutic experience. The coordinated movements create a unique sensation that enhances relaxation and promotes faster muscle recovery. This premium treatment offers unparalleled stress relief and leaves you feeling completely rejuvenated.
+                    </div>
+                    <div class="price-options">1 Hour: <strong>$424,000 COP – $121 USD</strong></div>
+                    <div class="price-options">90 Minutes: <strong>$545,000 COP – $145 USD</strong></div>
+                    <div class="price-options">2 Hours: <strong>$666,000 COP – $177 USD</strong></div>
+                    <button class="btn-availability" onclick="fbqTrackCustomEvent('FourHandsClick', '4 Hands Massage', 'four_hands'); trackCalendlyReserva('four_hands_massage', 424000); openCalendlyFourHands()">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Tab Facials -->
+            <div id="facials" class="tab-content">
+                <div class="service-card">
+                    <div class="service-image">
+                        <video autoplay muted loop playsinline class="service-video">
+                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                    <div class="service-title">Basic Facial Cleansing</div>
+                    <div class="service-description">
+                        Essential facial treatment including deep cleansing, gentle exfoliation for luminosity, light blackhead extraction, customized mask (calming, hydrating, or purifying), toning, moisturizing, and sun protection application. Perfect for maintaining healthy, glowing skin.
+</div>
+<div class="service-price">$182,000 COP – $48 USD</div>
+<div class="price-options">Duration: <strong>45 minutes</strong></div>
+<button class="btn-availability" onclick="fbqTrackCustomEvent('BasicFacialClick', 'Basic Facial Cleansing', 'basic_facial'); trackCalendlyReserva('basic_facial_cleansing', 182000); openCalendlyBasicFacial()">Book Now</button>
+</div>
+            <div class="service-card">
+                <div class="service-image">
+                    <video autoplay muted loop playsinline class="service-video">
+                        <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial2.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="service-title">Deep Facial Cleansing</div>
+                <div class="service-description">
+                    Comprehensive facial treatment featuring personalized skin analysis, facial yoga session, deep cleansing, activated charcoal exfoliation, enzymatic peeling mask, thorough impurity extraction, aloe vera calming mask, cryotherapy, lymphatic drainage, high-hydration mask, collagen veil, jade roller treatment, and sun protection.
+                </div>
+                <div class="service-price">$206,000 COP – $55 USD</div>
+                <div class="price-options">Duration: <strong>60 minutes</strong></div>
+                <button class="btn-availability" onclick="fbqTrackCustomEvent('DeepFacialClick', 'Deep Facial Cleansing', 'deep_facial'); trackCalendlyReserva('deep_facial_cleansing', 206000); openCalendlyDeepFacial()">Book Now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <video autoplay muted loop playsinline class="service-video">
+                        <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial3.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="service-title">Facial Porcelain Treatment</div>
+                <div class="service-description">
+                    Premium facial treatment designed to achieve porcelain-like skin perfection. Includes advanced cleansing techniques, specialized exfoliation, customized treatment masks, professional extractions, rejuvenating serums, facial massage for immediate glow effect, intensive hydration, and protective finishing. Ideal for special occasions or when you want flawless, radiant skin.
+                </div>
+                <div class="service-price">$218,000 COP – $58 USD</div>
+                <div class="price-options">Duration: <strong>75 minutes</strong></div>
+                <button class="btn-availability" onclick="fbqTrackCustomEvent('PorcelainFacialClick', 'Facial Porcelain Treatment', 'porcelain_facial'); trackCalendlyReserva('facial_porcelain_treatment', 218000); openCalendlyPorcelainFacial()">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="location-section">
+        <h2>relaxation specialists</h2>
+        <div class="image-gallery">
+
+            <div class="gallery-item">
+            <img src="/f1.jpg" alt="Instalación 2">
+            </div>
+            <div class="gallery-item">
+            <img src="/f2.jpg" alt="Instalación 3">
+            </div>
+            <div class="gallery-item">
+            <img src="/f3.jpg" alt="Instalación 4">
+            </div>
+            <div class="gallery-item">
+            <img src="/f4.jpg" alt="Instalación 4">
+            </div>
+            <div class="gallery-item">
+            <img src="/f5.jpg" alt="Instalación 4">
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <div class="divider"></div>
+
+    <footer>
+        <p class="gold-text">© 2025 Massage Spa Natalia Ruiz</p>
+        <p>All rights reserved</p>
+        <p style="margin-top: 15px;">bogota - Colombia</p>
+        <p style="margin-top: 10px; color: #DAA520;">Your luxury destination for wellness and relaxation</p>
+    </footer>
+
+    <div class="floating-whatsapp" onclick="return trackWhatsAppLead('https://wa.me/573138772082?text=' + encodeURIComponent('Hola! Me gustaría información sobre los servicios de Massage Spa Natalia Ruiz 🌿✨'), 'floating_button_spa')"></div>
+    </div>
+</div>
+
+<script>
+    // Control de música de fondo
+    const bgMusic = document.getElementById('bgMusic');
+    const audioControl = document.getElementById('audioControl');
+    let isPlaying = false;
+
+    // Función para iniciar música
+    function startMusic() {
+        bgMusic.play().then(() => {
+            isPlaying = true;
+            audioControl.classList.add('playing');
+            audioControl.classList.remove('paused');
+        }).catch((error) => {
+            console.log('Autoplay bloqueado:', error);
+            isPlaying = false;
+            audioControl.classList.add('paused');
+            audioControl.classList.remove('playing');
+        });
+    }
+
+    // Intentar reproducir música automáticamente cuando carga la página
+    window.addEventListener('load', () => {
+        // Establecer volumen bajo para mejor experiencia
+        bgMusic.volume = 0.3;
+        startMusic();
+    });
+
+    // Intentar reproducir en el primer click/interacción del usuario
+    document.addEventListener('click', function initAudio() {
+        if (!isPlaying) {
+            startMusic();
+        }
+        // Remover el listener después del primer click
+        document.removeEventListener('click', initAudio);
+    }, { once: true });
+
+    // También intentar con scroll
+    document.addEventListener('scroll', function initAudioScroll() {
+        if (!isPlaying) {
+            startMusic();
+        }
+        document.removeEventListener('scroll', initAudioScroll);
+    }, { once: true });
+
+    // Control manual de audio
+    audioControl.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evitar que dispare otros eventos
+        if (isPlaying) {
+            bgMusic.pause();
+            isPlaying = false;
+            audioControl.classList.add('paused');
+            audioControl.classList.remove('playing');
+        } else {
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                audioControl.classList.add('playing');
+                audioControl.classList.remove('paused');
+            });
+        }
+    });
+
+    // Funciones de navegación
+    function showTab(tabName) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+        
+        event.target.classList.add('active');
+        document.getElementById(tabName).classList.add('active');
+        
+        // Scroll suave al contenido
+        setTimeout(() => {
+            document.getElementById(tabName).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }, 100);
+    }
+
+    function scrollToServices() {
+        document.getElementById('servicios').scrollIntoView({ 
+            behavior: 'smooth'
+        });
+    }
+
+    // FUNCIONES DE CALENDLY CON TRACKING YA INTEGRADO EN LOS BOTONES
+    function openCalendlyTherapeutic() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Therapeutic Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyDeepTissue() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Deep Tissue Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlySports() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Sports Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyRelaxing() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Relaxing Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyCouple() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Couples Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyCupping() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Cupping Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyPrenatal() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Prenatal Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyPostpartum() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Postpartum Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyDecontracting() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Decontracting Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyHotStone() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Hot Stone Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyHotCandle() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Hot Candle Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyLomiLomi() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Lomi Lomi Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlySpecialDecoration() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Special Decoration Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyFourHands() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=4 Hands Massage';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyBasicFacial() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Basic Facial Cleansing';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyDeepFacial() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Deep Facial Cleansing';
+        }
+    });
+        return false;
+    }
+
+    function openCalendlyPorcelainFacial() {
+        Calendly.initPopupWidget({url: 'https://calendly.com/muservicioscol/booking-massage',
+        prefill: {},
+        utm: {},
+        onSuccessfulSchedule: function() {
+            window.location.href = 'booking-confirmation.html?service=Facial Porcelain Treatment';
+        }
+    });
+        return false;
+    }
+
+
+
+
+    // Efecto parallax suave en scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.service-card');
+                
+                parallaxElements.forEach((element, index) => {
+                    const speed = 0.5;
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos * 0.02}px)`;
+                });
+                
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+
+
+    // Sistema de traducción
+    const translations = {
+        en: {
+            title: "Welcome to Massage Spa Natalia Ruiz",
+            subtitle: "Your Luxury Wellness and Relaxation Oasis in bogota",
+            bookNow: "BOOK NOW",
+            viewServices: "View Services",
+            ourServices: "Our Services",
+            massages: "Massages",
+            fourHands: "4 Hands Massage",
+            facialTreatments: "Facial Treatments",
+            relaxationSpecialists: "relaxation specialists",
+            infoText: "Located in El Poblado, bogota, our spa is easily accessible and designed to offer you a unique wellness experience. We provide private parking and all the amenities to make your visit perfect.",
+            schedule: "We're open Monday to Sunday from 8:00 a.m. to 1:00 a.m.",
+            // Servicios de masajes
+            therapeuticMassage: "Therapeutic Massage",
+            deepTissueMassage: "Deep Tissue Massage",
+            sportsMassage: "Sports Massage",
+            relaxingMassage: "Relaxing Massage",
+            couplesMassage: "Couple's Massage",
+            cuppingMassage: "Cupping Massage",
+            prenatalMassage: "Prenatal Massage",
+            postpartumMassage: "Postpartum Massage",
+            decontractingMassage: "Decontracting Massage",
+            hotStoneMassage: "Hot Stone Massage",
+            specialDecorationMassage: "Special Decoration Massage",
+            hotCandleMassage: "Hot Candle Massage",
+            lomiLomiMassage: "Lomi Lomi Massage",
+            fourHandsMassage: "4 Hands Massage",
+            basicFacialCleansing: "Basic Facial Cleansing",
+            deepFacialCleansing: "Deep Facial Cleansing",
+            facialPorcelainTreatment: "Facial Porcelain Treatment",
+            duration: "Duration",
+            minutes: "Minutes",
+            hour: "Hour",
+            hours: "Hours",
+
+            // Descripciones de servicios en inglés
+            therapeuticDesc: "A focused treatment designed to address specific muscle tension and pain points. Our therapeutic approach combines various techniques to promote healing, improve circulation, and restore balance to your body's natural alignment.",
+            deepTissueDesc: "Intensive therapy targeting deeper muscle layers and chronic tension points. Using firm pressure and slow strokes, this treatment helps release muscle knots, improve mobility, and alleviate persistent pain in neck, back, shoulders, and legs.",
+            sportsDesc: "Designed for active individuals and athletes. This treatment focuses on specific muscle groups to enhance performance, prevent injuries, and accelerate recovery. Includes stretching techniques and targeted pressure on overworked areas.",
+            relaxingDesc: "A gentle, stress-relieving experience designed to calm the mind and deeply relax the body. Using smooth, flowing movements combined with aromatherapy and warm oils to improve circulation and create a sense of complete tranquility.",
+            couplesDesc: "Share a romantic and relaxing experience together. Enjoy simultaneous massages in a tranquil setting designed for two, perfect for couples looking to reconnect and unwind together in a peaceful atmosphere.",
+            cuppingDesc: "Ancient healing technique using specialized cups to create suction on the skin. This treatment improves blood flow, reduces muscle tension, promotes healing, and helps release toxins from deep tissue layers.",
+            prenatalDesc: "Gentle and safe massage specially designed for expecting mothers. Relieves lower back pain, leg swelling, shoulder tension, and improves circulation. Performed with comfortable positioning and techniques adapted to each pregnancy stage.",
+            postpartumDesc: "Specialized treatment for new mothers to help the body recover after childbirth. Focuses on relieving muscle tension, improving circulation, reducing swelling, and providing emotional support during this important transition period.",
+            decontractingDesc: "Therapeutic treatment specifically designed to release muscle contractures and chronic tension. Uses targeted pressure and specialized techniques to restore muscle flexibility and eliminate pain caused by prolonged stress or poor posture.",
+            hotStoneDesc: "Luxurious treatment combining traditional massage with heated volcanic stones. The warm stones help penetrate deep into muscles, melting away tension and stress while promoting profound relaxation and improved circulation.",
+            specialDecorationDesc: "A uniquely personalized massage experience enhanced with special ambiance and decorative elements. Perfect for celebrations, special occasions, or when you want to create memorable moments in a beautifully customized setting.",
+            hotCandleDesc: "Indulgent treatment using warm, melted candle wax that transforms into luxurious massage oil. The warm wax deeply nourishes the skin while providing a sensory experience that combines aromatherapy with deeply relaxing massage techniques.",
+            lomiLomiDesc: "Traditional Hawaiian massage technique using flowing, rhythmic movements that mimic ocean waves. This holistic treatment works on physical, mental, and spiritual levels, promoting deep relaxation and energy flow throughout the body.",
+            fourHandsDesc: "Experience the ultimate in luxury and relaxation with our signature 4 hands massage. Two skilled therapists work in perfect synchronization to provide a deeply immersive and therapeutic experience. The coordinated movements create a unique sensation that enhances relaxation and promotes faster muscle recovery.",
+            basicFacialDesc: "Essential facial treatment including deep cleansing, gentle exfoliation for luminosity, light blackhead extraction, customized mask (calming, hydrating, or purifying), toning, moisturizing, and sun protection application. Perfect for maintaining healthy, glowing skin.",
+            deepFacialDesc: "Comprehensive facial treatment featuring personalized skin analysis, facial yoga session, deep cleansing, activated charcoal exfoliation, enzymatic peeling mask, thorough impurity extraction, aloe vera calming mask, cryotherapy, lymphatic drainage, high-hydration mask, collagen veil, jade roller treatment, and sun protection.",
+            porcelainFacialDesc: "Premium facial treatment designed to achieve porcelain-like skin perfection. Includes advanced cleansing techniques, specialized exfoliation, customized treatment masks, professional extractions, rejuvenating serums, facial massage for immediate glow effect, intensive hydration, and protective finishing.",
+
+            // Precios en inglés
+            thirtyMinutes: "30 Minutes: <strong>$121,000 COP – $33 USD</strong>",
+            oneHour: "1 Hour: <strong>$200,000 COP – $53 USD</strong>",
+            ninetyMinutes: "90 Minutes: <strong>$303,000 COP – $80 USD</strong>",
+            coupleThirtyMinutes: "30 Minutes: <strong>$200,000 COP – $66 USD</strong>",
+            coupleOneHour: "1 Hour: <strong>$484,000 COP – $128 USD</strong>",
+            coupleNinetyMinutes: "90 Minutes: <strong>$606,000 COP – $160 USD</strong>",
+            fourHandsOneHour: "1 Hour: <strong>$424,000 COP – $121 USD</strong>",
+            fourHandsNinetyMinutes: "90 Minutes: <strong>$545,000 COP – $145 USD</strong>",
+            fourHandsTwoHours: "2 Hours: <strong>$666,000 COP – $177 USD</strong>",
+            basicFacialPrice: "$182,000 COP – $48 USD",
+            deepFacialPrice: "$206,000 COP – $55 USD",
+            porcelainFacialPrice: "$218,000 COP – $58 USD",
+            fortyFiveMinutes: "Duration: <strong>45 minutes</strong>",
+            sixtyMinutes: "Duration: <strong>60 minutes</strong>",
+            seventyFiveMinutes: "Duration: <strong>75 minutes</strong>"
+        },
+        es: {
+            title: "Bienvenido a Massage Spa Natalia Ruiz",
+            subtitle: "Tu Oasis de Lujo para el Bienestar y la Relajación en bogota",
+            bookNow: "RESERVAR",
+            viewServices: "Ver Servicios",
+            ourServices: "Nuestros Servicios",
+            massages: "Masajes",
+            fourHands: "Masaje 4 Manos",
+            facialTreatments: "Tratamientos Faciales",
+            relaxationSpecialists: "especialistas en relajación",
+            infoText: "Ubicado en El Poblado, bogota, nuestro spa es fácilmente accesible y está diseñado para ofrecerte una experiencia única de bienestar. Proporcionamos estacionamiento privado y todas las comodidades para que tu visita sea perfecta.",
+            schedule: "Estamos abiertos de lunes a domingo de 8:00 a.m. a 1:00 a.m.",
+            // Servicios de masajes
+            therapeuticMassage: "Masaje Terapéutico",
+            deepTissueMassage: "Masaje de Tejido Profundo",
+            sportsMassage: "Masaje Deportivo",
+            relaxingMassage: "Masaje Relajante",
+            couplesMassage: "Masaje en Pareja",
+            cuppingMassage: "Masaje con Ventosas",
+            prenatalMassage: "Masaje Prenatal",
+            postpartumMassage: "Masaje Postparto",
+            decontractingMassage: "Masaje Descontracturante",
+            hotStoneMassage: "Masaje con Piedras Calientes",
+            specialDecorationMassage: "Masaje con Decoración Especial",
+            hotCandleMassage: "Masaje con Velas Calientes",
+            lomiLomiMassage: "Masaje Lomi Lomi",
+            fourHandsMassage: "Masaje 4 Manos",
+            basicFacialCleansing: "Limpieza Facial Básica",
+            deepFacialCleansing: "Limpieza Facial Profunda",
+            facialPorcelainTreatment: "Tratamiento Facial Porcelana",
+            duration: "Duración",
+            minutes: "Minutos",
+            hour: "Hora",
+            hours: "Horas",
+
+            // Descripciones de servicios en español
+            therapeuticDesc: "Un tratamiento enfocado diseñado para abordar tensiones musculares específicas y puntos de dolor. Nuestro enfoque terapéutico combina varias técnicas para promover la curación, mejorar la circulación y restaurar el equilibrio de la alineación natural de tu cuerpo.",
+            deepTissueDesc: "Terapia intensiva dirigida a capas musculares más profundas y puntos de tensión crónica. Usando presión firme y movimientos lentos, este tratamiento ayuda a liberar nudos musculares, mejorar la movilidad y aliviar el dolor persistente en cuello, espalda, hombros y piernas.",
+            sportsDesc: "Diseñado para personas activas y atletas. Este tratamiento se enfoca en grupos musculares específicos para mejorar el rendimiento, prevenir lesiones y acelerar la recuperación. Incluye técnicas de estiramiento y presión dirigida en áreas sobrecargadas.",
+            relaxingDesc: "Una experiencia suave y liberadora del estrés diseñada para calmar la mente y relajar profundamente el cuerpo. Usando movimientos suaves y envolventes combinados con aromaterapia y aceites tibios para mejorar la circulación y crear una sensación de tranquilidad completa.",
+            couplesDesc: "Comparte una experiencia romántica y relajante juntos. Disfruta de masajes simultáneos en un entorno tranquilo diseñado para dos, perfecto para parejas que buscan reconectarse y relajarse juntos en una atmósfera pacífica.",
+            cuppingDesc: "Técnica de curación ancestral que utiliza copas especializadas para crear succión en la piel. Este tratamiento mejora el flujo sanguíneo, reduce la tensión muscular, promueve la curación y ayuda a liberar toxinas de las capas profundas del tejido.",
+            prenatalDesc: "Masaje suave y seguro especialmente diseñado para futuras madres. Alivia el dolor lumbar, la hinchazón en las piernas, la tensión en los hombros y mejora la circulación. Se realiza con posicionamiento cómodo y técnicas adaptadas a cada etapa del embarazo.",
+            postpartumDesc: "Tratamiento especializado para nuevas madres para ayudar al cuerpo a recuperarse después del parto. Se enfoca en aliviar la tensión muscular, mejorar la circulación, reducir la hinchazón y brindar apoyo emocional durante este importante período de transición.",
+            decontractingDesc: "Tratamiento terapéutico específicamente diseñado para liberar contracturas musculares y tensión crónica. Utiliza presión dirigida y técnicas especializadas para restaurar la flexibilidad muscular y eliminar el dolor causado por estrés prolongado o mala postura.",
+            hotStoneDesc: "Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras calientes ayudan a penetrar profundamente en los músculos, derritiendo la tensión y el estrés mientras promueven una relajación profunda y mejoran la circulación.",
+            specialDecorationDesc: "Una experiencia de masaje únicamente personalizada mejorada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales, o cuando quieres crear momentos memorables en un entorno bellamente personalizado.",
+            hotCandleDesc: "Tratamiento indulgente que utiliza cera de vela tibia derretida que se transforma en aceite de masaje lujoso. La cera tibia nutre profundamente la piel mientras proporciona una experiencia sensorial que combina aromaterapia con técnicas de masaje profundamente relajantes.",
+            lomiLomiDesc: "Técnica de masaje tradicional hawaiana que utiliza movimientos fluidos y rítmicos que imitan las olas del océano. Este tratamiento holístico funciona en niveles físicos, mentales y espirituales, promoviendo relajación profunda y flujo de energía por todo el cuerpo.",
+            fourHandsDesc: "Experimenta lo último en lujo y relajación con nuestro masaje característico de 4 manos. Dos terapeutas expertos trabajan en perfecta sincronización para brindar una experiencia profundamente inmersiva y terapéutica. Los movimientos coordinados crean una sensación única que mejora la relajación y promueve una recuperación muscular más rápida.",
+            basicFacialDesc: "Tratamiento facial esencial que incluye limpieza profunda, exfoliación suave para luminosidad, extracción ligera de puntos negros, mascarilla personalizada (calmante, hidratante o purificante), tonificación, hidratación y aplicación de protección solar. Perfecto para mantener una piel saludable y radiante.",
+            deepFacialDesc: "Tratamiento facial integral que incluye análisis personalizado de la piel, sesión de yoga facial, limpieza profunda, exfoliación con carbón activado, mascarilla peeling enzimático, extracción completa de impurezas, mascarilla calmante de aloe vera, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno, tratamiento con rodillo de jade y protección solar.",
+            porcelainFacialDesc: "Tratamiento facial premium diseñado para lograr la perfección de piel tipo porcelana. Incluye técnicas de limpieza avanzadas, exfoliación especializada, mascarillas de tratamiento personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para efecto de brillo inmediato,hidratación intensiva y acabado protector.",
+            // Precios en español
+            thirtyMinutes: "30 Minutos: <strong>$121,000 COP – $33 USD</strong>",
+            oneHour: "1 Hora: <strong>$200,000 COP – $53 USD</strong>",
+            ninetyMinutes: "90 Minutos: <strong>$303,000 COP – $80 USD</strong>",
+            coupleThirtyMinutes: "30 Minutos: <strong>$200,000 COP – $66 USD</strong>",
+            coupleOneHour: "1 Hora: <strong>$484,000 COP – $128 USD</strong>",
+            coupleNinetyMinutes: "90 Minutos: <strong>$606,000 COP – $160 USD</strong>",
+            fourHandsOneHour: "1 Hora: <strong>$424,000 COP – $121 USD</strong>",
+            fourHandsNinetyMinutes: "90 Minutos: <strong>$545,000 COP – $145 USD</strong>",
+            fourHandsTwoHours: "2 Horas: <strong>$666,000 COP – $177 USD</strong>",
+            basicFacialPrice: "$182,000 COP – $48 USD",
+            deepFacialPrice: "$206,000 COP – $55 USD",
+            porcelainFacialPrice: "$218,000 COP – $58 USD",
+            fortyFiveMinutes: "Duración: <strong>45 minutos</strong>",
+            sixtyMinutes: "Duración: <strong>60 minutos</strong>",
+            seventyFiveMinutes: "Duración: <strong>75 minutos</strong>"
+        }
+    };
+
+    let currentLanguage = 'en';
+
+    function switchLanguage(lang) {
+        currentLanguage = lang;
+        
+        // Actualizar botones activos
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(lang + '-btn').classList.add('active');
+        
+        // Aplicar traducciones
+        const t = translations[lang];
+        
+        // Elementos principales
+        document.querySelector('.hero h1').innerHTML = `${t.title.split('Massage Spa Natalia Ruiz')[0]}<span class="highlight">Massage Spa Natalia Ruiz</span>`;
+        document.querySelector('.hero-subtitle').textContent = t.subtitle;
+        document.querySelector('.btn-header').textContent = t.bookNow;
+        document.querySelector('.services-section h2').textContent = t.ourServices;
+        document.querySelector('.location-section h2').textContent = t.relaxationSpecialists;
+        document.querySelector('.info-section h3').textContent = t.infoText;
+        document.querySelector('.schedule').textContent = t.schedule;
+        
+        // Botones CTA
+        document.querySelector('.btn-secondary').textContent = t.viewServices;
+        document.querySelector('.btn-whatsapp').textContent = t.bookNow;
+        
+        // Tabs
+        document.querySelector('.tab[onclick="showTab(\'massages\')"]').textContent = t.massages;
+        document.querySelector('.tab[onclick="showTab(\'four-hands\')"]').textContent = t.fourHands;
+        document.querySelector('.tab[onclick="showTab(\'facials\')"]').textContent = t.facialTreatments;
+
+        // AGREGAR ESTO: Traducir todos los servicios
+        translateServices(t);
+    }
+
+    // Agregar esta nueva función después de switchLanguage:
+    function translateServices(t) {
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach((card, index) => {
+            const title = card.querySelector('.service-title');
+            const description = card.querySelector('.service-description');
+            const priceOptions = card.querySelectorAll('.price-options');
+            const bookButton = card.querySelector('.btn-availability');
+            
+            // Traducir títulos de servicios
+            if (title) {
+                const titleText = title.textContent.trim();
+                switch (titleText) {
+                    case 'Therapeutic Massage':
+                    case 'Masaje Terapéutico':
+                        title.textContent = t.therapeuticMassage;
+                        description.textContent = t.therapeuticDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Deep Tissue Massage':
+                    case 'Masaje de Tejido Profundo':
+                        title.textContent = t.deepTissueMassage;
+                        description.textContent = t.deepTissueDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Sports Massage':
+                    case 'Masaje Deportivo':
+                        title.textContent = t.sportsMassage;
+                        description.textContent = t.sportsDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Relaxing Massage':
+                    case 'Masaje Relajante':
+                        title.textContent = t.relaxingMassage;
+                        description.textContent = t.relaxingDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case "Couple's Massage":
+                    case 'Masaje en Pareja':
+                        title.textContent = t.couplesMassage;
+                        description.textContent = t.couplesDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.coupleThirtyMinutes;
+                            priceOptions[1].innerHTML = t.coupleOneHour;
+                            priceOptions[2].innerHTML = t.coupleNinetyMinutes;
+                        }
+                        break;
+                    case 'Cupping Massage':
+                    case 'Masaje con Ventosas':
+                        title.textContent = t.cuppingMassage;
+                        description.textContent = t.cuppingDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Prenatal Massage':
+                    case 'Masaje Prenatal':
+                        title.textContent = t.prenatalMassage;
+                        description.textContent = t.prenatalDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Postpartum Massage':
+                    case 'Masaje Postparto':
+                        title.textContent = t.postpartumMassage;
+                        description.textContent = t.postpartumDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Decontracting Massage':
+                    case 'Masaje Descontracturante':
+                        title.textContent = t.decontractingMassage;
+                        description.textContent = t.decontractingDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Hot Stone Massage':
+                    case 'Masaje con Piedras Calientes':
+                        title.textContent = t.hotStoneMassage;
+                        description.textContent = t.hotStoneDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Special Decoration Massage':
+                    case 'Masaje con Decoración Especial':
+                        title.textContent = t.specialDecorationMassage;
+                        description.textContent = t.specialDecorationDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Hot Candle Massage':
+                    case 'Masaje con Velas Calientes':
+                        title.textContent = t.hotCandleMassage;
+                        description.textContent = t.hotCandleDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case 'Lomi Lomi Massage':
+                    case 'Masaje Lomi Lomi':
+                        title.textContent = t.lomiLomiMassage;
+                        description.textContent = t.lomiLomiDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.thirtyMinutes;
+                            priceOptions[1].innerHTML = t.oneHour;
+                            priceOptions[2].innerHTML = t.ninetyMinutes;
+                        }
+                        break;
+                    case '4 Hands Massage':
+                    case 'Masaje 4 Manos':
+                        title.textContent = t.fourHandsMassage;
+                        description.textContent = t.fourHandsDesc;
+                        if (priceOptions.length >= 3) {
+                            priceOptions[0].innerHTML = t.fourHandsOneHour;
+                            priceOptions[1].innerHTML = t.fourHandsNinetyMinutes;
+                            priceOptions[2].innerHTML = t.fourHandsTwoHours;
+                        }
+                        break;
+                    case 'Basic Facial Cleansing':
+                    case 'Limpieza Facial Básica':
+                        title.textContent = t.basicFacialCleansing;
+                        description.textContent = t.basicFacialDesc;
+                        const priceElement1 = card.querySelector('.service-price');
+                        if (priceElement1) priceElement1.textContent = t.basicFacialPrice;
+                        if (priceOptions[0]) priceOptions[0].innerHTML = t.fortyFiveMinutes;
+                        break;
+                    case 'Deep Facial Cleansing':
+                    case 'Limpieza Facial Profunda':
+                        title.textContent = t.deepFacialCleansing;
+                        description.textContent = t.deepFacialDesc;
+                        const priceElement2 = card.querySelector('.service-price');
+                        if (priceElement2) priceElement2.textContent = t.deepFacialPrice;
+                        if (priceOptions[0]) priceOptions[0].innerHTML = t.sixtyMinutes;
+                        break;
+                    case 'Facial Porcelain Treatment':
+                    case 'Tratamiento Facial Porcelana':
+                        title.textContent = t.facialPorcelainTreatment;
+                        description.textContent = t.porcelainFacialDesc;
+                        const priceElement3 = card.querySelector('.service-price');
+                        if (priceElement3) priceElement3.textContent = t.porcelainFacialPrice;
+                        if (priceOptions[0]) priceOptions[0].innerHTML = t.seventyFiveMinutes;
+                        break;
+                }
+            }
+            
+            // Traducir botón Book Now
+            if (bookButton) {
+                bookButton.textContent = t.bookNow;
+            }
+        });
+    
+    
+    }
+
+    // ===========================================
+// LISTENER GLOBAL PARA EVENTOS DE CALENDLY
+// ===========================================
+window.addEventListener('message', function (e) {
+  if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+    console.log('Calendly Event:', e.data.event);
+
+    // Cuando se completa el agendamiento
+    if (e.data.event === 'calendly.event_scheduled') {
+      console.log('¡Cita agendada exitosamente!');
+
+      const eventDetails = e.data.payload;
+      let serviceName = 'Spa Service';
+
+      // Obtener el nombre del servicio desde el URI de Calendly
+      if (eventDetails && eventDetails.event && eventDetails.event.uri) {
+        const uri = eventDetails.event.uri;
+
+        // Extraer el tipo de servicio del URI
+        if (uri.includes('therapeutic')) serviceName = 'Therapeutic Massage';
+        else if (uri.includes('deep-tissue')) serviceName = 'Deep Tissue Massage';
+        else if (uri.includes('sports')) serviceName = 'Sports Massage';
+        else if (uri.includes('relaxing')) serviceName = 'Relaxing Massage';
+        else if (uri.includes('couple')) serviceName = 'Couples Massage';
+        else if (uri.includes('cupping')) serviceName = 'Cupping Massage';
+        else if (uri.includes('prenatal')) serviceName = 'Prenatal Massage';
+        else if (uri.includes('postpartum')) serviceName = 'Postpartum Massage';
+        else if (uri.includes('decontracting')) serviceName = 'Decontracting Massage';
+        else if (uri.includes('hot-stone')) serviceName = 'Hot Stone Massage';
+        else if (uri.includes('hot-candle')) serviceName = 'Hot Candle Massage';
+        else if (uri.includes('lomi-lomi')) serviceName = 'Lomi Lomi Massage';
+        else if (uri.includes('special-decoration')) serviceName = 'Special Decoration Massage';
+        else if (uri.includes('four-hands')) serviceName = '4 Hands Massage';
+        else if (uri.includes('basic-facial')) serviceName = 'Basic Facial Cleansing';
+        else if (uri.includes('deep-facial')) serviceName = 'Deep Facial Cleansing';
+        else if (uri.includes('porcelain-facial')) serviceName = 'Facial Porcelain Treatment';
+      }
+
+      console.log('Redirigiendo a confirmación con servicio:', serviceName);
+
+      // Pequeño delay para asegurar que Calendly termine su proceso
+      setTimeout(function () {
+        window.location.href =
+          'booking-confirmation.html?service=' + encodeURIComponent(serviceName);
+      }, 1000);
+    }
+  }
+});
+
+
+// =======================================================
+// FUNCIONES DE CALENDLY CON TRACKING YA INTEGRADO
+// =======================================================
+function openCalendlyTherapeutic() {
+  Calendly.initPopupWidget({
+    url: 'https://calendly.com/muservicioscol/booking-massage',
+    prefill: {},
+    utm: {}
+  });
+  return false;
+}
+
+    
+    // Verificar que los píxeles estén cargados
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof fbq === 'function') {
+            console.log('Meta Pixel cargado correctamente');
+        } else {
+            console.warn('Meta Pixel no está cargado');
+        }
+        
+        if (typeof gtag === 'function') {
+            console.log('Google Tags cargado correctamente');
+        } else {
+            console.warn('Google Tags no está cargado');
+        }
+    });
+</script>
+</body>
+</html>
