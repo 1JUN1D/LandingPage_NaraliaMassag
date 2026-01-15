@@ -138,679 +138,8 @@
     <!-- Calendly badge widget end -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    
-    <style>
-        /* ===================================
-           VARIABLES Y RESET
-           =================================== */
-        :root {
-            --primary-gold: #DAA520;
-            --dark-bg: #1a1a1a;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --text-light: #f5f5f5;
-            --text-muted: #999;
-            --border-color: rgba(218, 165, 32, 0.2);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
+    <link rel="stylesheet" href="styles2.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        /* ===================================
-           PATRÓN DE FONDO
-           =================================== */
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(218, 165, 32, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ===================================
-           HEADER
-           =================================== */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .spa-name {
-            font-size: 1.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            font-weight: 700;
-        }
-
-        .btn-header {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.4);
-        }
-
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--primary-gold);
-            color: var(--primary-gold);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .lang-btn.active,
-        .lang-btn:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-        }
-
-        /* ===================================
-           CONTENEDOR PRINCIPAL
-           =================================== */
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .content-wrapper {
-            padding: 2rem;
-        }
-
-        /* ===================================
-           SECCIÓN HERO
-           =================================== */
-        .hero {
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .highlight {
-            color: var(--primary-gold);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .banner-placeholder {
-            width: 100%;
-            max-width: 900px;
-            margin: 2rem auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .banner-image,
-        .banner-video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ===================================
-           INFO SECTION
-           =================================== */
-        .info-section {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
-        }
-
-        .info-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
-        }
-
-        .map-container {
-            margin: 2rem 0;
-        }
-
-        .schedule {
-            text-align: center;
-            color: var(--primary-gold);
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-        }
-
-        /* ===================================
-           BOTONES CTA
-           =================================== */
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--primary-gold);
-            color: var(--primary-gold);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #20BA5A;
-            transform: translateY(-2px);
-        }
-
-        /* ===================================
-           DIVIDER
-           =================================== */
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--primary-gold), transparent);
-            margin: 4rem auto;
-            max-width: 600px;
-        }
-
-        /* ===================================
-           SECCIÓN DE SERVICIOS - TABS
-           =================================== */
-        .services-section {
-            padding: 3rem 1rem;
-        }
-
-        .services-section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 3rem;
-            color: var(--primary-gold);
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .tab {
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-light);
-            padding: 0.75rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .tab:hover,
-        .tab.active {
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            border-color: var(--primary-gold);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: grid;
-        }
-
-        /* ===================================
-           SERVICE CARDS - MEJORADAS
-           =================================== */
-        .tab-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        @media (min-width: 1200px) {
-            .tab-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1199px) {
-            .tab-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.2);
-        }
-
-        .service-image {
-            width: 100%;
-            height: 250px;
-            position: relative;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .service-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .service-title {
-            font-size: 1.4rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--primary-gold);
-            padding: 1.5rem 1.5rem 1rem;
-            font-weight: 600;
-        }
-
-        .service-description {
-            padding: 0 1.5rem 1rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .price-options,
-        .service-price {
-            padding: 0.5rem 1.5rem;
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .price-options strong,
-        .service-price {
-            color: var(--primary-gold);
-        }
-
-        .btn-availability {
-            margin: 1.5rem;
-            padding: 1rem;
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .btn-availability:hover {
-            background: #c49a1f;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.4);
-        }
-
-        /* ===================================
-           PRICING SECTION - NUEVA
-           =================================== */
-        .pricing-section {
-            padding: 4rem 1rem;
-            background: rgba(218, 165, 32, 0.03);
-        }
-
-        .pricing-section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: var(--primary-gold);
-        }
-
-        .text-large {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 1024px) {
-            .pricing-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .pricing-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary-gold);
-            box-shadow: 0 12px 32px rgba(218, 165, 32, 0.3);
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary-gold);
-            border-width: 3px;
-            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.2);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-gold);
-            color: var(--dark-bg);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .pricing-title {
-            font-size: 1.8rem;
-            color: var(--primary-gold);
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .pricing-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .pricing-price {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin: 1.5rem 0;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .pricing-currency {
-            font-size: 1.5rem;
-            vertical-align: super;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            padding: 0;
-        }
-
-        .pricing-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .pricing-features li:before {
-            content: "✓ ";
-            color: var(--primary-gold);
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-
-        .btn-full-width {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .whatsapp-icon {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* ===================================
-           LOCATION SECTION
-           =================================== */
-        .location-section {
-            padding: 3rem 1rem;
-        }
-
-        .location-section h2 {
-            text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2rem;
-            color: var(--primary-gold);
-            text-transform: lowercase;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* ===================================
-           FOOTER
-           =================================== */
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: rgba(0, 0, 0, 0.5);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .gold-text {
-            color: var(--primary-gold);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* ===================================
-           FLOATING WHATSAPP
-           =================================== */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 9999;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .floating-whatsapp svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        /* ===================================
-           AUDIO CONTROL
-           =================================== */
-        .audio-control {
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: var(--card-bg);
-            border: 2px solid var(--primary-gold);
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .audio-control:hover {
-            background: var(--primary-gold);
-            transform: scale(1.1);
-        }
-
-        .audio-control.playing:before {
-            content: "🔊";
-            font-size: 24px;
-        }
-
-        .audio-control.paused:before {
-            content: "🔇";
-            font-size: 24px;
-        }
-
-        /* ===================================
-           RESPONSIVE
-           =================================== */
-        @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .spa-name {
-                font-size: 1.2rem;
-            }
-
-            .tabs {
-                flex-direction: column;
-            }
-
-            .tab {
-                width: 100%;
-            }
-
-            .pricing-price {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="bg-pattern"></div>
@@ -881,11 +210,15 @@
             <div id="massages" class="tab-content active">
                 <h2 style="grid-column: 1/-1; text-align: center; color: var(--primary-gold); font-size: 2.5rem; margin-bottom: 2rem;">Terapias de Masaje Profesionales</h2>
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<!-- Nuevo: -->
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Terapeutico.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Terapeutico.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Terapéutico</div>
                     <div class="service-description">
                         Un tratamiento enfocado diseñado para abordar tensiones musculares específicas y puntos de dolor. Nuestro enfoque terapéutico combina varias técnicas para promover la curación, mejorar la circulación y restaurar el equilibrio de la alineación natural de tu cuerpo.
@@ -896,11 +229,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/DeepTissue.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/DeepTissue.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje de Tejido Profundo</div>
                     <div class="service-description">
                         Terapia intensiva dirigida a capas musculares más profundas y puntos de tensión crónica. Usando presión firme y movimientos lentos, este tratamiento ayuda a liberar nudos musculares, mejorar la movilidad y aliviar el dolor persistente en cuello, espalda, hombros y piernas.
@@ -911,11 +247,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Deportivo.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Deportivo.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Deportivo.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Deportivo.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Deportivo</div>
                     <div class="service-description">
                         Diseñado para personas activas y atletas. Este tratamiento se enfoca en grupos musculares específicos para mejorar el rendimiento, prevenir lesiones y acelerar la recuperación. Incluye técnicas de estiramiento y presión dirigida en áreas sobrecargadas.
@@ -926,11 +265,15 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Terapeutico.webp')"></div>
+        <!-- Mismo thumbnail que terapéutico si es el mismo video -->
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Terapeutico.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Relajante</div>
                     <div class="service-description">
                         Una experiencia suave y liberadora del estrés diseñada para calmar la mente y relajar profundamente el cuerpo. Usando movimientos suaves y envolventes combinados con aromaterapia y aceites tibios para mejorar la circulación y crear una sensación de tranquilidad completa.
@@ -941,11 +284,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Couple.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Couple.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Couple.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Couple.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje en Pareja</div>
                     <div class="service-description">
                         Comparte una experiencia romántica y relajante juntos. Disfruta de masajes simultáneos en un entorno tranquilo diseñado para dos, perfecto para parejas que buscan reconectarse y relajarse juntos en una atmósfera pacífica.
@@ -957,11 +303,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Cupping.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Cupping.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Cupping.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Cupping.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje con Ventosas</div>
                     <div class="service-description">
                         Técnica de curación ancestral que utiliza copas especializadas para crear succión en la piel. Este tratamiento mejora el flujo sanguíneo, reduce la tensión muscular, promueve la curación y ayuda a liberar toxinas de las capas profundas del tejido.
@@ -972,11 +321,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Prenatal.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Prenatal.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Prenatal.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Prenatal.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Prenatal</div>
                     <div class="service-description">
                         Masaje suave y seguro especialmente diseñado para futuras madres. Alivia el dolor lumbar, la hinchazón en las piernas, la tensión en los hombros y mejora la circulación. Se realiza con posicionamiento cómodo y técnicas adaptadas a cada etapa del embarazo.
@@ -987,11 +339,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/PostPartum.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/PostPartum.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/PostPartum.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/PostPartum.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Postparto</div>
                     <div class="service-description">
                         Tratamiento especializado para nuevas madres para ayudar al cuerpo a recuperarse después del parto. Se enfoca en aliviar la tensión muscular, mejorar la circulación, reducir la hinchazón y brindar apoyo emocional durante este importante período de transición.
@@ -1002,11 +357,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Descontracturante.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Descontracturante.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Descontracturante.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Descontracturante.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Descontracturante</div>
                     <div class="service-description">
                         Tratamiento terapéutico específicamente diseñado para liberar contracturas musculares y tensión crónica. Utiliza presión dirigida y técnicas especializadas para restaurar la flexibilidad muscular y eliminar el dolor causado por estrés prolongado o mala postura.
@@ -1017,11 +375,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotStone.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/HotStone.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/HotStone.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotStone.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje con Piedras Calientes</div>
                     <div class="service-description">
                         Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras calientes ayudan a penetrar profundamente en los músculos, derritiendo la tensión y el estrés mientras promueven una relajación profunda y mejoran la circulación.
@@ -1032,11 +393,15 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/DeepTissue.webp')"></div>
+        <!-- Mismo que deep tissue si es el mismo video -->
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/DeepTissue.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje con Decoración Especial</div>
                     <div class="service-description">
                         Una experiencia de masaje únicamente personalizada mejorada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales, o cuando quieres crear momentos memorables en un entorno bellamente personalizado.
@@ -1047,11 +412,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotCandle.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/HotCandle.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/HotCandle.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotCandle.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje con Velas Calientes</div>
                     <div class="service-description">
                         Tratamiento indulgente que utiliza cera de vela tibia derretida que se transforma en aceite de masaje lujoso. La cera tibia nutre profundamente la piel mientras proporciona una experiencia sensorial que combina aromaterapia con técnicas de masaje profundamente relajantes.
@@ -1062,11 +430,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/LomiLomi.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/LomiLomi.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/LomiLomi.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/LomiLomi.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje Lomi Lomi</div>
                     <div class="service-description">
                         Técnica de masaje tradicional hawaiana que utiliza movimientos fluidos y rítmicos que imitan las olas del océano. Este tratamiento holístico funciona en niveles físicos, mentales y espirituales, promoviendo relajación profunda y flujo de energía por todo el cuerpo.
@@ -1081,11 +452,14 @@
             <div id="four-hands" class="tab-content" style="justify-items: center;">
                 <h2 style="grid-column: 1/-1; text-align: center; color: var(--primary-gold); font-size: 2.5rem; margin-bottom: 2rem;">Experiencia Masaje 4 Manos</h2>
                 <div class="service-card" style="max-width: 500px;">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/4Hands.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/4Hands.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/4Hands.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/4Hands.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Masaje 4 Manos</div>
                     <div class="service-description">
                         Experimenta lo último en lujo y relajación con nuestro masaje característico de 4 manos. Dos terapeutas expertos trabajan en perfecta sincronización para brindar una experiencia profundamente inmersiva y terapéutica. Los movimientos coordinados crean una sensación única que mejora la relajación y promueve una recuperación muscular más rápida. Este tratamiento premium ofrece un alivio incomparable del estrés y te deja sintiéndote completamente rejuvenecido.
@@ -1101,11 +475,14 @@
             <div id="facials" class="tab-content">
                 <h2 style="grid-column: 1/-1; text-align: center; color: var(--primary-gold); font-size: 2.5rem; margin-bottom: 2rem;">Tratamientos Faciales y Cuidado de la Piel</h2>
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Facial.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Facial.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Limpieza Facial Básica</div>
                     <div class="service-description">
                         Tratamiento facial esencial que incluye limpieza profunda, exfoliación suave para luminosidad, extracción ligera de puntos negros, mascarilla personalizada (calmante, hidratante o purificante), tonificación, hidratación y aplicación de protección solar. Perfecto para mantener una piel saludable y radiante.
@@ -1116,11 +493,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial2.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Facial2.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Facial2.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial2.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Limpieza Facial Profunda</div>
                     <div class="service-description">
                         Tratamiento facial integral que incluye análisis personalizado de la piel, sesión de yoga facial, limpieza profunda, exfoliación con carbón activado, mascarilla peeling enzimático, extracción completa de impurezas, mascarilla calmante de aloe vera, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno, tratamiento con rodillo de jade y protección solar.
@@ -1131,11 +511,14 @@
                 </div>
 
                 <div class="service-card">
-                    <div class="service-image">
-                        <video muted loop playsinline class="service-video" loading="lazy" preload="none">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial3.mp4" type="video/mp4">
-                        </video>
-                    </div>
+<div class="service-image">
+    <div class="video-container">
+        <div class="video-thumbnail" style="background-image: url('/thumbnails/Facial3.webp')"></div>
+        <video muted loop playsinline class="service-video" loading="lazy" preload="none" poster="/thumbnails/Facial3.webp">
+            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial3.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
                     <div class="service-title">Tratamiento Facial Porcelana</div>
                     <div class="service-description">
                         Tratamiento facial premium diseñado para lograr la perfección de piel tipo porcelana. Incluye técnicas de limpieza avanzadas, exfoliación especializada, mascarillas de tratamiento personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para efecto de brillo inmediato, hidratación intensiva y acabado protector. Ideal para ocasiones especiales o cuando deseas una piel impecable y radiante.

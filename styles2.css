@@ -1,0 +1,764 @@
+        /* ===================================
+           VARIABLES Y RESET
+           =================================== */
+        :root {
+            --primary-gold: #DAA520;
+            --dark-bg: #1a1a1a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-light: #f5f5f5;
+            --text-muted: #999;
+            --border-color: rgba(218, 165, 32, 0.2);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ===================================
+           PATRÓN DE FONDO
+           =================================== */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(218, 165, 32, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ===================================
+           HEADER
+           =================================== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spa-name {
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .btn-header {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.4);
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        /* ===================================
+           CONTENEDOR PRINCIPAL
+           =================================== */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            padding: 2rem;
+        }
+
+        /* ===================================
+           SECCIÓN HERO
+           =================================== */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary-gold);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .banner-placeholder {
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .banner-image,
+        .banner-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===================================
+           INFO SECTION
+           =================================== */
+        .info-section {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .map-container {
+            margin: 2rem 0;
+        }
+
+        .schedule {
+            text-align: center;
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ===================================
+           BOTONES CTA
+           =================================== */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+        }
+
+        /* ===================================
+           DIVIDER
+           =================================== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-gold), transparent);
+            margin: 4rem auto;
+            max-width: 600px;
+        }
+
+        /* ===================================
+           SECCIÓN DE SERVICIOS - TABS
+           =================================== */
+        .services-section {
+            padding: 3rem 1rem;
+        }
+
+        .services-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 3rem;
+            color: var(--primary-gold);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .tab {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .tab:hover,
+        .tab.active {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            border-color: var(--primary-gold);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        /* ===================================
+           SERVICE CARDS - MEJORADAS
+           =================================== */
+        .tab-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        @media (min-width: 1200px) {
+            .tab-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .tab-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.2);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .service-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--primary-gold);
+            padding: 1.5rem 1.5rem 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            padding: 0 1.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .price-options,
+        .service-price {
+            padding: 0.5rem 1.5rem;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .price-options strong,
+        .service-price {
+            color: var(--primary-gold);
+        }
+
+        .btn-availability {
+            margin: 1.5rem;
+            padding: 1rem;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-availability:hover {
+            background: #c49a1f;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(218, 165, 32, 0.4);
+        }
+
+        /* ===================================
+           PRICING SECTION - NUEVA
+           =================================== */
+        .pricing-section {
+            padding: 4rem 1rem;
+            background: rgba(218, 165, 32, 0.03);
+        }
+
+        .pricing-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+        }
+
+        .text-large {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 12px 32px rgba(218, 165, 32, 0.3);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-gold);
+            border-width: 3px;
+            box-shadow: 0 8px 24px rgba(218, 165, 32, 0.2);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .pricing-price {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin: 1.5rem 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .pricing-currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            padding: 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .btn-full-width {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* ===================================
+           LOCATION SECTION
+           =================================== */
+        .location-section {
+            padding: 3rem 1rem;
+        }
+
+        .location-section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--primary-gold);
+            text-transform: lowercase;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===================================
+           FLOATING WHATSAPP
+           =================================== */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-whatsapp svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ===================================
+           AUDIO CONTROL
+           =================================== */
+        .audio-control {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            background: var(--primary-gold);
+            transform: scale(1.1);
+        }
+
+        .audio-control.playing:before {
+            content: "🔊";
+            font-size: 24px;
+        }
+
+        .audio-control.paused:before {
+            content: "🔇";
+            font-size: 24px;
+        }
+
+        /* ===================================
+           RESPONSIVE
+           =================================== */
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .spa-name {
+                font-size: 1.2rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                width: 100%;
+            }
+
+            .pricing-price {
+                font-size: 2rem;
+            }
+        }
+
+/* ===================================
+   THUMBNAILS PARA VIDEOS
+   (Añadir al final del archivo existente)
+   =================================== */
+
+/* Contenedor de video con thumbnail */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Thumbnail que se muestra mientras carga el video */
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000; /* Fondo negro por defecto */
+    z-index: 2;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Indicador de play en el thumbnail */
+.video-thumbnail::before {
+    content: "▶";
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.video-thumbnail:hover::before {
+    color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Clase para ocultar el thumbnail cuando el video está listo */
+.video-thumbnail.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Asegurar que el video esté sobre el thumbnail */
+.service-video {
+    position: relative;
+    z-index: 1;
+    background-color: #000; /* Fondo negro de respaldo */
+}
+
+/* Asegurar que el contenedor mantenga las proporciones */
+.service-image {
+    width: 100%;
+    height: 250px; /* Mantiene la altura que ya tienes */
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Estilo para cuando el thumbnail está cargando */
+.video-thumbnail.loading {
+    background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Spinner de carga opcional */
+.video-thumbnail.loading::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(218, 165, 32, 0.2);
+    border-top-color: var(--primary-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
