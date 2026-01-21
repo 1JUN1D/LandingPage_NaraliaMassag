@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Drenaje linfático en Bogotá. Técnica manual profesional para reducir retención de líquidos, post operatorio y eliminar toxinas. Drenaje linfático facial, corporal y de piernas.">
-    <title>Drenaje Linfático en Bogotá | Massage Spa Natalia Ruiz</title>
+    <meta name="description" content="Lymphatic drainage in Bogotá. Professional manual technique to reduce fluid retention, post-operative care and eliminate toxins. Facial, corporal and leg lymphatic drainage.">
+    <title>Lymphatic Drainage in Bogotá | Massage Spa Natalia Ruiz</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,21 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-
     <link rel="stylesheet" href="style-template.css">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T1Q2Y5FGJX');
-</script>
-
-
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T1Q2Y5FGJX');
+    </script>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,6 +44,46 @@
             'allow_enhanced_conversions': true
         });
     </script>
+
+    <!-- Language Toggle Styles -->
+    <style>
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--color-primary, #2563eb);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .language-toggle:hover {
+            background: var(--color-primary-dark, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .language-toggle::before {
+            content: "🇪🇸";
+            margin-right: 8px;
+        }
+
+        .language-toggle[data-lang="es"]::before {
+            content: "🇺🇸";
+        }
+
+        /* Ensure elements have data attributes for translation */
+        [data-en], [data-es] {
+            transition: opacity 0.2s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -56,32 +91,44 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Language Toggle Button -->
+    <button class="language-toggle" onclick="toggleLanguage()" data-lang="en">
+        <span data-en="English" data-es="Español">English</span>
+    </button>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Contenido texto (izquierda) -->
+                <!-- Content text (left) -->
                 <div class="hero-content">
-                    <p class="hero-subtitle">💧 Elimina Toxinas Naturalmente</p>
-                    <h1 class="heading-primary">Drenaje Linfático en Bogotá</h1>
+                    <p class="hero-subtitle">
+                        <span data-en="💧 Eliminate Toxins Naturally" data-es="💧 Elimina Toxinas Naturalmente">💧 Eliminate Toxins Naturally</span>
+                    </p>
+                    <h1 class="heading-primary">
+                        <span data-en="Lymphatic Drainage in Bogotá" data-es="Drenaje Linfático en Bogotá">Lymphatic Drainage in Bogotá</span>
+                    </h1>
                     <p class="hero-description">
-                        Reduce la retención de líquidos con nuestro <strong class="text-highlight">drenaje linfático manual</strong> en Bogotá. Especialistas en drenaje linfático facial, drenaje linfático de piernas y drenaje linfático post operatorio con técnica brasileña.
+                        <span data-en="Reduce fluid retention with our <strong class='text-highlight'>manual lymphatic drainage</strong> in Bogotá. Specialists in facial lymphatic drainage, leg lymphatic drainage and post-operative lymphatic drainage with Brazilian technique." 
+                              data-es="Reduce la retención de líquidos con nuestro <strong class='text-highlight'>drenaje linfático manual</strong> en Bogotá. Especialistas en drenaje linfático facial, drenaje linfático de piernas y drenaje linfático post operatorio con técnica brasileña.">
+                        Reduce fluid retention with our <strong class="text-highlight">manual lymphatic drainage</strong> in Bogotá. Specialists in facial lymphatic drainage, leg lymphatic drainage and post-operative lymphatic drainage with Brazilian technique.
+                        </span>
                     </p>
                     <a href="#planes" class="btn btn-primary btn-large" onclick="trackCTA('hero_ver_planes')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Ver Planes y Precios
+                        <span data-en="View Plans and Pricing" data-es="Ver Planes y Precios">View Plans and Pricing</span>
                     </a>
                 </div>
 
-                <!-- Imagen (derecha) -->
+                <!-- Image (right) -->
                 <div class="hero-image-wrapper">
                     <div class="hero-image-container">
-                        <!-- IMAGEN PLACEHOLDER - REEMPLAZAR CON TU IMAGEN -->
+                        <!-- IMAGE PLACEHOLDER - REPLACE WITH YOUR IMAGE -->
                         <img 
                             src="/portadas/drenajelinfatico.webp" 
-                            alt="Drenaje linfático manual profesional en Bogotá"
+                            alt="Professional manual lymphatic drainage in Bogotá"
                             class="hero-image"
                             loading="eager"
                         >
@@ -94,14 +141,16 @@
     <!-- VIDEO SECTION -->
     <section class="section">
         <div class="video-wrapper">
-            <h2 class="heading-secondary">Conoce Nuestra Técnica de Drenaje Linfático</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Learn About Our Lymphatic Drainage Technique" data-es="Conoce Nuestra Técnica de Drenaje Linfático">Learn About Our Lymphatic Drainage Technique</span>
+            </h2>
             <div class="video-container">
-                <!-- REEMPLAZAR CON TU VIDEO DE INSTAGRAM/YOUTUBE -->
+                <!-- REPLACE WITH YOUR INSTAGRAM/YOUTUBE VIDEO -->
                 <iframe src="DrenajeLinfatico.mp4" 
                         allowfullscreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                 </iframe>
-                <!-- ALTERNATIVA PARA VIDEO LOCAL:
+                <!-- ALTERNATIVE FOR LOCAL VIDEO:
                 <video controls>
                     <source src="video-drenaje-linfatico.mp4" type="video/mp4">
                 </video>
@@ -110,12 +159,14 @@
         </div>
     </section>
 
-    <!-- BENEFITS SECTION CON ICONOS SVG PREMIUM -->
+    <!-- BENEFITS SECTION WITH PREMIUM SVG ICONS -->
     <section class="section section-bg">
         <div class="container">
-            <h2 class="heading-secondary">¿Por Qué Elegir Nuestro Drenaje Linfático?</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Why Choose Our Lymphatic Drainage?" data-es="¿Por Qué Elegir Nuestro Drenaje Linfático?">Why Choose Our Lymphatic Drainage?</span>
+            </h2>
             <div class="benefits-grid">
-                <!-- Benefit 1: Elimina Retención -->
+                <!-- Benefit 1: Eliminates Retention -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -124,11 +175,18 @@
                             <path d="M12 8h.01"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Elimina Retención de Líquidos</h3>
-                    <p>Nuestro drenaje linfático manual reduce la hinchazón en piernas, abdomen y cara mediante técnica brasileña especializada.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Eliminates Fluid Retention" data-es="Elimina Retención de Líquidos">Eliminates Fluid Retention</span>
+                    </h3>
+                    <p>
+                        <span data-en="Our manual lymphatic drainage reduces swelling in legs, abdomen and face through specialized Brazilian technique." 
+                              data-es="Nuestro drenaje linfático manual reduce la hinchazón en piernas, abdomen y cara mediante técnica brasileña especializada.">
+                        Our manual lymphatic drainage reduces swelling in legs, abdomen and face through specialized Brazilian technique.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 2: Post Operatorio -->
+                <!-- Benefit 2: Post-Operative -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -137,11 +195,18 @@
                             <path d="M9 12h6"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Ideal Post Operatorio</h3>
-                    <p>Especialistas en drenaje linfático post operatorio para recuperación de liposucción, abdominoplastia y cirugías estéticas.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Ideal for Post-Operative" data-es="Ideal Post Operatorio">Ideal for Post-Operative</span>
+                    </h3>
+                    <p>
+                        <span data-en="Specialists in post-operative lymphatic drainage for recovery from liposuction, abdominoplasty and aesthetic surgeries." 
+                              data-es="Especialistas en drenaje linfático post operatorio para recuperación de liposucción, abdominoplastia y cirugías estéticas.">
+                        Specialists in post-operative lymphatic drainage for recovery from liposuction, abdominoplasty and aesthetic surgeries.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 3: Técnica Profesional -->
+                <!-- Benefit 3: Professional Technique -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -153,11 +218,18 @@
                             <path d="M8 8l8 8"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Drenaje Linfático Corporal</h3>
-                    <p>Técnica de drenaje linfático masaje que incluye facial, piernas, abdomen y brazos con movimientos precisos y suaves.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Full Body Lymphatic Drainage" data-es="Drenaje Linfático Corporal">Full Body Lymphatic Drainage</span>
+                    </h3>
+                    <p>
+                        <span data-en="Lymphatic drainage massage technique that includes facial, legs, abdomen and arms with precise and gentle movements." 
+                              data-es="Técnica de drenaje linfático masaje que incluye facial, piernas, abdomen y brazos con movimientos precisos y suaves.">
+                        Lymphatic drainage massage technique that includes facial, legs, abdomen and arms with precise and gentle movements.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 4: Resultados Comprobados -->
+                <!-- Benefit 4: Proven Results -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -165,8 +237,15 @@
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Certificadas en Técnica Brasileña</h3>
-                    <p>Terapeutas especializadas en drenaje linfático brasileño con más de 5 años de experiencia en masaje linfático Bogotá.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Certified in Brazilian Technique" data-es="Certificadas en Técnica Brasileña">Certified in Brazilian Technique</span>
+                    </h3>
+                    <p>
+                        <span data-en="Therapists specialized in Brazilian lymphatic drainage with more than 5 years of experience in lymphatic massage Bogotá." 
+                              data-es="Terapeutas especializadas en drenaje linfático brasileño con más de 5 años de experiencia en masaje linfático Bogotá.">
+                        Therapists specialized in Brazilian lymphatic drainage with more than 5 years of experience in lymphatic massage Bogotá.
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -175,96 +254,120 @@
     <!-- PRICING SECTION -->
     <section id="planes" class="section">
         <div class="container">
-            <h2 class="heading-secondary">Elige Tu Plan de Drenaje Linfático</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Choose Your Lymphatic Drainage Plan" data-es="Elige Tu Plan de Drenaje Linfático">Choose Your Lymphatic Drainage Plan</span>
+            </h2>
             <p class="text-large text-center" style="margin-bottom: 1rem;">
-                Todos nuestros planes incluyen <strong>drenaje linfático manual profesional</strong>
+                <span data-en="All our plans include <strong>professional manual lymphatic drainage</strong>" 
+                      data-es="Todos nuestros planes incluyen <strong>drenaje linfático manual profesional</strong>">
+                All our plans include <strong>professional manual lymphatic drainage</strong>
+                </span>
             </p>
             <p class="text-center" style="color: var(--color-primary); margin-bottom: 3rem;">
-                📍 <strong>Drenaje linfático Bogotá precio</strong> con la mejor relación calidad-costo
+                📍 <strong>
+                <span data-en="Lymphatic drainage Bogotá price with the best quality-cost ratio" 
+                      data-es="Drenaje linfático Bogotá precio con la mejor relación calidad-costo">
+                Lymphatic drainage Bogotá price with the best quality-cost ratio
+                </span>
+                </strong>
             </p>
             
             <div class="pricing-grid">
                 <!-- PLAN 1: FLASH -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Drenaje Linfático Rápido</h3>
-                    <p class="pricing-subtitle">23 sesiones en 5 citas</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Quick Lymphatic Drainage" data-es="Drenaje Linfático Rápido">Quick Lymphatic Drainage</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="23 sessions in 5 appointments" data-es="23 sesiones en 5 citas">23 sessions in 5 appointments</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>450.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>5 sesiones de drenaje linfático</strong></li>
-                        <li>Drenaje linfático facial</li>
-                        <li>Drenaje linfático de piernas</li>
-                        <li>5 sesiones de masaje reductor</li>
-                        <li>5 sesiones de maderoterapia</li>
-                        <li>2 corrientes rusas</li>
-                        <li>1 sesión de radiofrecuencia</li>
-                        <li>5 sesiones de termoterapia</li>
+                        <li><strong><span data-en="5 lymphatic drainage sessions" data-es="5 sesiones de drenaje linfático">5 lymphatic drainage sessions</span></strong></li>
+                        <li><span data-en="Facial lymphatic drainage" data-es="Drenaje linfático facial">Facial lymphatic drainage</span></li>
+                        <li><span data-en="Leg lymphatic drainage" data-es="Drenaje linfático de piernas">Leg lymphatic drainage</span></li>
+                        <li><span data-en="5 reducing massage sessions" data-es="5 sesiones de masaje reductor">5 reducing massage sessions</span></li>
+                        <li><span data-en="5 wood therapy sessions" data-es="5 sesiones de maderoterapia">5 wood therapy sessions</span></li>
+                        <li><span data-en="2 Russian currents" data-es="2 corrientes rusas">2 Russian currents</span></li>
+                        <li><span data-en="1 radiofrequency session" data-es="1 sesión de radiofrecuencia">1 radiofrequency session</span></li>
+                        <li><span data-en="5 thermotherapy sessions" data-es="5 sesiones de termoterapia">5 thermotherapy sessions</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Drenaje Linfático Rápido')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Quick Lymphatic Drainage', 'Plan Flash - Drenaje Linfático Rápido')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Ahora
+                        <span data-en="Book Now" data-es="Reservar Ahora">Book Now</span>
                     </button>
                 </div>
 
-                <!-- PLAN 2: 10 SESIONES (DESTACADO) -->
+                <!-- PLAN 2: 10 SESSIONS (FEATURED) -->
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">💎 Más Popular</div>
-                    <h3 class="pricing-title">Drenaje Linfático Profesional</h3>
-                    <p class="pricing-subtitle">10 sesiones completas</p>
+                    <div class="pricing-badge">
+                        <span data-en="💎 Most Popular" data-es="💎 Más Popular">💎 Most Popular</span>
+                    </div>
+                    <h3 class="pricing-title">
+                        <span data-en="Professional Lymphatic Drainage" data-es="Drenaje Linfático Profesional">Professional Lymphatic Drainage</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="10 complete sessions" data-es="10 sesiones completas">10 complete sessions</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>650.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Drenaje linfático manual</strong></li>
-                        <li>Drenaje linfático corporal completo</li>
-                        <li>Drenaje linfático abdomen</li>
-                        <li>Drenaje linfático cara y facial</li>
-                        <li>Masaje reductor complementario</li>
-                        <li>Maderoterapia drenante</li>
-                        <li>Ultrasonido terapéutico</li>
-                        <li>Electro estimulación</li>
-                        <li>Termoterapia relajante</li>
+                        <li><strong><span data-en="Manual lymphatic drainage" data-es="Drenaje linfático manual">Manual lymphatic drainage</span></strong></li>
+                        <li><span data-en="Complete body lymphatic drainage" data-es="Drenaje linfático corporal completo">Complete body lymphatic drainage</span></li>
+                        <li><span data-en="Abdominal lymphatic drainage" data-es="Drenaje linfático abdomen">Abdominal lymphatic drainage</span></li>
+                        <li><span data-en="Face and facial lymphatic drainage" data-es="Drenaje linfático cara y facial">Face and facial lymphatic drainage</span></li>
+                        <li><span data-en="Complementary reducing massage" data-es="Masaje reductor complementario">Complementary reducing massage</span></li>
+                        <li><span data-en="Draining wood therapy" data-es="Maderoterapia drenante">Draining wood therapy</span></li>
+                        <li><span data-en="Therapeutic ultrasound" data-es="Ultrasonido terapéutico">Therapeutic ultrasound</span></li>
+                        <li><span data-en="Electrostimulation" data-es="Electro estimulación">Electrostimulation</span></li>
+                        <li><span data-en="Relaxing thermotherapy" data-es="Termoterapia relajante">Relaxing thermotherapy</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sesiones - Drenaje Linfático Profesional')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sessions - Professional Lymphatic Drainage', 'Plan 10 Sesiones - Drenaje Linfático Profesional')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Plan Completo
+                        <span data-en="Book Complete Plan" data-es="Reservar Plan Completo">Book Complete Plan</span>
                     </button>
                 </div>
 
-                <!-- PLAN 3: 20 SESIONES -->
+                <!-- PLAN 3: 20 SESSIONS -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Drenaje Linfático Intensivo</h3>
-                    <p class="pricing-subtitle">20 sesiones - Post operatorio</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Intensive Lymphatic Drainage" data-es="Drenaje Linfático Intensivo">Intensive Lymphatic Drainage</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="20 sessions - Post-operative" data-es="20 sesiones - Post operatorio">20 sessions - Post-operative</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>1.300.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Drenaje linfático post operatorio</strong></li>
-                        <li>Técnica brasileña especializada</li>
-                        <li>Drenaje linfático de brazos</li>
-                        <li>Drenaje linfático intracavitario</li>
-                        <li>20 sesiones personalizadas</li>
-                        <li>Masaje reductor avanzado</li>
-                        <li>Maderoterapia profunda</li>
-                        <li>Ultrasonido + Cavitación</li>
-                        <li>Seguimiento post-quirúrgico</li>
+                        <li><strong><span data-en="Post-operative lymphatic drainage" data-es="Drenaje linfático post operatorio">Post-operative lymphatic drainage</span></strong></li>
+                        <li><span data-en="Specialized Brazilian technique" data-es="Técnica brasileña especializada">Specialized Brazilian technique</span></li>
+                        <li><span data-en="Arm lymphatic drainage" data-es="Drenaje linfático de brazos">Arm lymphatic drainage</span></li>
+                        <li><span data-en="Intracavitary lymphatic drainage" data-es="Drenaje linfático intracavitario">Intracavitary lymphatic drainage</span></li>
+                        <li><span data-en="20 personalized sessions" data-es="20 sesiones personalizadas">20 personalized sessions</span></li>
+                        <li><span data-en="Advanced reducing massage" data-es="Masaje reductor avanzado">Advanced reducing massage</span></li>
+                        <li><span data-en="Deep wood therapy" data-es="Maderoterapia profunda">Deep wood therapy</span></li>
+                        <li><span data-en="Ultrasound + Cavitation" data-es="Ultrasonido + Cavitación">Ultrasound + Cavitation</span></li>
+                        <li><span data-en="Post-surgical follow-up" data-es="Seguimiento post-quirúrgico">Post-surgical follow-up</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sesiones - Drenaje Linfático Intensivo Post Op')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sessions - Intensive Post-Op Lymphatic Drainage', 'Plan 20 Sesiones - Drenaje Linfático Intensivo Post Op')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Tratamiento
+                        <span data-en="Book Treatment" data-es="Reservar Tratamiento">Book Treatment</span>
                     </button>
                 </div>
             </div>
@@ -275,30 +378,63 @@
     <section class="section section-bg">
         <div class="container">
             <div class="trust-section">
-                <h2 class="heading-secondary" style="margin-bottom: 1rem;">Áreas que Tratamos con Drenaje Linfático</h2>
+                <h2 class="heading-secondary" style="margin-bottom: 1rem;">
+                    <span data-en="Areas We Treat with Lymphatic Drainage" data-es="Áreas que Tratamos con Drenaje Linfático">Areas We Treat with Lymphatic Drainage</span>
+                </h2>
                 <p class="text-large text-center" style="margin-bottom: 2rem; color: var(--color-text-light);">
-                    Nuestro drenaje linfático masaje abarca todo el cuerpo con técnica manual especializada
+                    <span data-en="Our lymphatic drainage massage covers the entire body with specialized manual technique" 
+                          data-es="Nuestro drenaje linfático masaje abarca todo el cuerpo con técnica manual especializada">
+                    Our lymphatic drainage massage covers the entire body with specialized manual technique
+                    </span>
                 </p>
                 
                 <div class="benefits-grid" style="margin-top: 2rem;">
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">👤 Drenaje Linfático Facial</h3>
-                        <p>Reduce hinchazón facial, ojeras y mejora la luminosidad de la piel con nuestra técnica de drenaje linfático cara especializada.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            👤 <span data-en="Facial Lymphatic Drainage" data-es="Drenaje Linfático Facial">Facial Lymphatic Drainage</span>
+                        </h3>
+                        <p>
+                            <span data-en="Reduces facial swelling, dark circles and improves skin luminosity with our specialized facial lymphatic drainage technique." 
+                                  data-es="Reduce hinchazón facial, ojeras y mejora la luminosidad de la piel con nuestra técnica de drenaje linfático cara especializada.">
+                            Reduces facial swelling, dark circles and improves skin luminosity with our specialized facial lymphatic drainage technique.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">🦵 Drenaje Linfático Piernas</h3>
-                        <p>Alivia piernas cansadas, várices y retención de líquidos con drenaje linfático de piernas manual profesional.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            🦵 <span data-en="Leg Lymphatic Drainage" data-es="Drenaje Linfático Piernas">Leg Lymphatic Drainage</span>
+                        </h3>
+                        <p>
+                            <span data-en="Relieves tired legs, varicose veins and fluid retention with professional manual leg lymphatic drainage." 
+                                  data-es="Alivia piernas cansadas, várices y retención de líquidos con drenaje linfático de piernas manual profesional.">
+                            Relieves tired legs, varicose veins and fluid retention with professional manual leg lymphatic drainage.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">💪 Drenaje Linfático Brazos</h3>
-                        <p>Reduce volumen y mejora circulación en brazos con técnica de drenaje linfático de brazos post operatorio.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            💪 <span data-en="Arm Lymphatic Drainage" data-es="Drenaje Linfático Brazos">Arm Lymphatic Drainage</span>
+                        </h3>
+                        <p>
+                            <span data-en="Reduces volume and improves circulation in arms with post-operative arm lymphatic drainage technique." 
+                                  data-es="Reduce volumen y mejora circulación en brazos con técnica de drenaje linfático de brazos post operatorio.">
+                            Reduces volume and improves circulation in arms with post-operative arm lymphatic drainage technique.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">🔧 Post Operatorio</h3>
-                        <p>Especialistas en drenaje linfático post operatorio para recuperación de liposucción, abdominoplastia y más.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            🔧 <span data-en="Post-Operative" data-es="Post Operatorio">Post-Operative</span>
+                        </h3>
+                        <p>
+                            <span data-en="Specialists in post-operative lymphatic drainage for recovery from liposuction, abdominoplasty and more." 
+                                  data-es="Especialistas en drenaje linfático post operatorio para recuperación de liposucción, abdominoplastia y más.">
+                            Specialists in post-operative lymphatic drainage for recovery from liposuction, abdominoplasty and more.
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -309,23 +445,33 @@
     <section class="section">
         <div class="container">
             <div class="trust-section">
-                <h2 class="heading-secondary" style="margin-bottom: 2rem;">Especialistas en Drenaje Linfático Bogotá</h2>
+                <h2 class="heading-secondary" style="margin-bottom: 2rem;">
+                    <span data-en="Lymphatic Drainage Specialists in Bogotá" data-es="Especialistas en Drenaje Linfático Bogotá">Lymphatic Drainage Specialists in Bogotá</span>
+                </h2>
                 <div class="trust-grid">
                     <div class="trust-item">
                         <div class="trust-number">800+</div>
-                        <div class="trust-label">Pacientes Post-Operatorias</div>
+                        <div class="trust-label">
+                            <span data-en="Post-Operative Patients" data-es="Pacientes Post-Operatorias">Post-Operative Patients</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">98%</div>
-                        <div class="trust-label">Reducción de Hinchazón</div>
+                        <div class="trust-label">
+                            <span data-en="Swelling Reduction" data-es="Reducción de Hinchazón">Swelling Reduction</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">5</div>
-                        <div class="trust-label">Años de Experiencia</div>
+                        <div class="trust-label">
+                            <span data-en="Years of Experience" data-es="Años de Experiencia">Years of Experience</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">4.9★</div>
-                        <div class="trust-label">Calificación Google</div>
+                        <div class="trust-label">
+                            <span data-en="Google Rating" data-es="Calificación Google">Google Rating</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -335,7 +481,9 @@
     <!-- LOCATION SECTION -->
     <section class="section section-bg">
         <div class="container-narrow">
-            <h2 class="heading-secondary">Masaje Linfático Bogotá</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Lymphatic Massage Bogotá" data-es="Masaje Linfático Bogotá">Lymphatic Massage Bogotá</span>
+            </h2>
             <div class="location-card">
                 <div class="location-icon">
                     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -347,60 +495,129 @@
                     <h3 class="heading-tertiary">Massage Spa Natalia Ruiz</h3>
                     <p>Kr 13 #32-33, Teusaquillo, Bogotá</p>
                     <p style="color: var(--color-primary); margin-top: 0.5rem;">
-                        <strong>Drenaje linfático Bogotá</strong> - Cerca de Chapinero
+                        <strong>
+                        <span data-en="Lymphatic drainage Bogotá - Near Chapinero" 
+                              data-es="Drenaje linfático Bogotá - Cerca de Chapinero">
+                        Lymphatic drainage Bogotá - Near Chapinero
+                        </span>
+                        </strong>
                     </p>
                     <p style="margin-top: 1rem; color: var(--color-text-light);">
-                        📞 Tel: <strong>313 877 2082</strong> | 
-                        💰 <strong>Drenaje linfático Bogotá precio desde $450.000</strong>
+                        📞 <span data-en="Tel" data-es="Tel">Tel</span>: <strong>313 877 2082</strong> | 
+                        💰 <strong>
+                        <span data-en="Lymphatic drainage Bogotá price from $450.000" 
+                              data-es="Drenaje linfático Bogotá precio desde $450.000">
+                        Lymphatic drainage Bogotá price from $450.000
+                        </span>
+                        </strong>
                     </p>
                 </div>
             </div>
             
             <div style="margin-top: 2rem; text-align: center;">
-                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Solicitar información - Drenaje Linfático')">
+                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Request information - Lymphatic Drainage', 'Solicitar información - Drenaje Linfático')">
                     <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                     </svg>
-                    Agendar Primera Sesión
+                    <span data-en="Schedule First Session" data-es="Agendar Primera Sesión">Schedule First Session</span>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <div class="whatsapp-float" onclick="contactWhatsApp(' - Drenaje Linfático')">
+    <div class="whatsapp-float" onclick="contactWhatsApp(' - Lymphatic Drainage', ' - Drenaje Linfático')">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z'/%3E%3C/svg%3E" alt="WhatsApp">
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2025 Massage Spa Natalia Ruiz | Drenaje Linfático en Bogotá</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kr 13 #32-33, Teusaquillo | Tel: 313 877 2082</p>
+        <p>&copy; 2025 Massage Spa Natalia Ruiz | <span data-en="Lymphatic Drainage in Bogotá" data-es="Drenaje Linfático en Bogotá">Lymphatic Drainage in Bogotá</span></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kr 13 #32-33, Teusaquillo | <span data-en="Tel" data-es="Tel">Tel</span>: 313 877 2082</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
-            Drenaje linfático manual • Drenaje linfático facial • Drenaje linfático post operatorio • Masaje linfático Bogotá
+            <span data-en="Manual lymphatic drainage • Facial lymphatic drainage • Post-operative lymphatic drainage • Lymphatic massage Bogotá" 
+                  data-es="Drenaje linfático manual • Drenaje linfático facial • Drenaje linfático post operatorio • Masaje linfático Bogotá">
+            Manual lymphatic drainage • Facial lymphatic drainage • Post-operative lymphatic drainage • Lymphatic massage Bogotá
+            </span>
         </p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Configuración
+        // Configuration
         const WHATSAPP_NUMBER = '573138772082';
         const CONVERSION_ID = 'AW-17876723428';
         const CONVERSION_LABEL = 'l-F_CJzEjeQbEOTNpMxC';
         
-        // Función para contactar por WhatsApp
-        function contactWhatsApp(plan) {
-            const message = `Hola! Me interesa el ${plan} de drenaje linfático. ¿Podrían darme más información?`;
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        // Current language (default English)
+        let currentLanguage = 'en';
+        
+        // Language toggle function
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            updateLanguage();
+            updateToggleButton();
+        }
+        
+        // Update all text elements based on current language
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en][data-es]');
             
-            // Tracking de conversión de Google Ads
+            elements.forEach(element => {
+                const englishText = element.getAttribute('data-en');
+                const spanishText = element.getAttribute('data-es');
+                
+                if (currentLanguage === 'en') {
+                    element.innerHTML = englishText;
+                } else {
+                    element.innerHTML = spanishText;
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (currentLanguage === 'es') {
+                metaDescription.setAttribute('content', 'Drenaje linfático en Bogotá. Técnica manual profesional para reducir retención de líquidos, post operatorio y eliminar toxinas. Drenaje linfático facial, corporal y de piernas.');
+                document.title = 'Drenaje Linfático en Bogotá | Massage Spa Natalia Ruiz';
+            } else {
+                metaDescription.setAttribute('content', 'Lymphatic drainage in Bogotá. Professional manual technique to reduce fluid retention, post-operative care and eliminate toxins. Facial, corporal and leg lymphatic drainage.');
+                document.title = 'Lymphatic Drainage in Bogotá | Massage Spa Natalia Ruiz';
+            }
+        }
+        
+        // Update toggle button appearance
+        function updateToggleButton() {
+            const toggleButton = document.querySelector('.language-toggle');
+            toggleButton.setAttribute('data-lang', currentLanguage);
+            
+            const buttonText = toggleButton.querySelector('span');
+            if (currentLanguage === 'en') {
+                buttonText.textContent = 'Español';
+            } else {
+                buttonText.textContent = 'English';
+            }
+        }
+        
+        // Contact WhatsApp function with language support
+        function contactWhatsApp(planEn, planEs = null) {
+            const plan = currentLanguage === 'en' ? planEn : (planEs || planEn);
+            const messageTemplate = currentLanguage === 'en' ? 
+                `Hello! I'm interested in the ${plan}. Could you give me more information?` :
+                `¡Hola! Me interesa el ${plan}. ¿Podrían darme más información?`;
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageTemplate)}`;
+            
+            // Google Ads conversion tracking
             gtag('event', 'conversion', {
                 'send_to': `${CONVERSION_ID}/${CONVERSION_LABEL}`,
                 'event_category': 'Contacto',
                 'event_label': plan
             });
             
-            // Abrir WhatsApp
+            // Open WhatsApp
             window.open(url, '_blank');
         }
         
@@ -421,6 +638,12 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+        
+        // Initialize page in English
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage();
+            updateToggleButton();
         });
     </script>
 </body>

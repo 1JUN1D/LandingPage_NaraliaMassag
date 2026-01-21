@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Electroestimulación en Bogotá. Electroestimulación TENS y electro estimulación para fisioterapia con técnica profesional para recuperación muscular, dolor y fortalecimiento.">
-    <title>Electroestimulación en Bogotá | Massage Spa Natalia Ruiz</title>
+    <meta name="description" content="Electrostimulation in Bogotá. TENS electrostimulation and electro stimulation for physiotherapy with professional technique for muscle recovery, pain relief and strengthening.">
+    <title>Electrostimulation in Bogotá | Massage Spa Natalia Ruiz</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,19 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-
     <link rel="stylesheet" href="style-template.css">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T1Q2Y5FGJX');
-</script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T1Q2Y5FGJX');
+    </script>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -47,6 +44,46 @@
             'allow_enhanced_conversions': true
         });
     </script>
+
+    <!-- Language Toggle Styles -->
+    <style>
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--color-primary, #2563eb);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .language-toggle:hover {
+            background: var(--color-primary-dark, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .language-toggle::before {
+            content: "🇪🇸";
+            margin-right: 8px;
+        }
+
+        .language-toggle[data-lang="es"]::before {
+            content: "🇺🇸";
+        }
+
+        /* Ensure elements have data attributes for translation */
+        [data-en], [data-es] {
+            transition: opacity 0.2s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -54,32 +91,44 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Language Toggle Button -->
+    <button class="language-toggle" onclick="toggleLanguage()" data-lang="en">
+        <span data-en="English" data-es="Español">English</span>
+    </button>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Contenido texto (izquierda) -->
+                <!-- Content text (left) -->
                 <div class="hero-content">
-                    <p class="hero-subtitle">⚡ Activa, Recupera y Fortalece</p>
-                    <h1 class="heading-primary">Electroestimulación en Bogotá</h1>
+                    <p class="hero-subtitle">
+                        <span data-en="⚡ Activate, Recover and Strengthen" data-es="⚡ Activa, Recupera y Fortalece">⚡ Activate, Recover and Strengthen</span>
+                    </p>
+                    <h1 class="heading-primary">
+                        <span data-en="Electrostimulation in Bogotá" data-es="Electroestimulación en Bogotá">Electrostimulation in Bogotá</span>
+                    </h1>
                     <p class="hero-description">
-                        Mejora tu recuperación muscular con <strong class="text-highlight">electro estimulación</strong> en Bogotá. Trabajamos con <strong>electroestimulación TENS</strong> para alivio del dolor y <strong>electroestimulación en fisioterapia</strong> para rehabilitación, fortalecimiento y activación muscular con protocolo profesional.
+                        <span data-en="Improve your muscle recovery with <strong class='text-highlight'>electro stimulation</strong> in Bogotá. We work with <strong>TENS electrostimulation</strong> for pain relief and <strong>electrostimulation in physiotherapy</strong> for rehabilitation, strengthening and muscle activation with professional protocol."
+                              data-es="Mejora tu recuperación muscular con <strong class='text-highlight'>electro estimulación</strong> en Bogotá. Trabajamos con <strong>electroestimulación TENS</strong> para alivio del dolor y <strong>electroestimulación en fisioterapia</strong> para rehabilitación, fortalecimiento y activación muscular con protocolo profesional.">
+                        Improve your muscle recovery with <strong class="text-highlight">electro stimulation</strong> in Bogotá. We work with <strong>TENS electrostimulation</strong> for pain relief and <strong>electrostimulation in physiotherapy</strong> for rehabilitation, strengthening and muscle activation with professional protocol.
+                        </span>
                     </p>
                     <a href="#planes" class="btn btn-primary btn-large" onclick="trackCTA('hero_ver_planes')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Ver Planes y Precios
+                        <span data-en="View Plans and Pricing" data-es="Ver Planes y Precios">View Plans and Pricing</span>
                     </a>
                 </div>
 
-                <!-- Imagen (derecha) -->
+                <!-- Image (right) -->
                 <div class="hero-image-wrapper">
                     <div class="hero-image-container">
-                        <!-- IMAGEN PLACEHOLDER - REEMPLAZAR CON TU IMAGEN -->
+                        <!-- IMAGE PLACEHOLDER - REPLACE WITH YOUR IMAGE -->
                         <img 
                             src="/portadas/electroterapia.webp" 
-                            alt="Electroestimulación TENS en Bogotá para fisioterapia y recuperación muscular"
+                            alt="TENS Electrostimulation in Bogotá for physiotherapy and muscle recovery"
                             class="hero-image"
                             loading="eager"
                         >
@@ -92,14 +141,16 @@
     <!-- VIDEO SECTION -->
     <section class="section">
         <div class="video-wrapper">
-            <h2 class="heading-secondary">Conoce Nuestra Técnica de Electroestimulación</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Learn About Our Electrostimulation Technique" data-es="Conoce Nuestra Técnica de Electroestimulación">Learn About Our Electrostimulation Technique</span>
+            </h2>
             <div class="video-container">
-                <!-- REEMPLAZAR CON TU VIDEO DE INSTAGRAM/YOUTUBE -->
+                <!-- REPLACE WITH YOUR INSTAGRAM/YOUTUBE VIDEO -->
                 <iframe src="Electroestimulacion.mp4" 
                         allowfullscreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                 </iframe>
-                <!-- ALTERNATIVA PARA VIDEO LOCAL:
+                <!-- ALTERNATIVE FOR LOCAL VIDEO:
                 <video controls>
                     <source src="video-electroestimulacion.mp4" type="video/mp4">
                 </video>
@@ -108,12 +159,14 @@
         </div>
     </section>
 
-    <!-- BENEFITS SECTION CON ICONOS SVG PREMIUM -->
+    <!-- BENEFITS SECTION WITH PREMIUM SVG ICONS -->
     <section class="section section-bg">
         <div class="container">
-            <h2 class="heading-secondary">¿Por Qué Elegir Nuestra Electroestimulación?</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Why Choose Our Electrostimulation?" data-es="¿Por Qué Elegir Nuestra Electroestimulación?">Why Choose Our Electrostimulation?</span>
+            </h2>
             <div class="benefits-grid">
-                <!-- Benefit 1: Alivio del dolor -->
+                <!-- Benefit 1: Pain Relief -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -122,11 +175,18 @@
                             <path d="M12 8h.01"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Electroestimulación TENS</h3>
-                    <p>Alivio del dolor y tensión muscular con <strong>electroestimulación TENS</strong> mediante parámetros controlados y aplicación segura.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="TENS Electrostimulation" data-es="Electroestimulación TENS">TENS Electrostimulation</span>
+                    </h3>
+                    <p>
+                        <span data-en="Pain relief and muscle tension with <strong>TENS electrostimulation</strong> through controlled parameters and safe application."
+                              data-es="Alivio del dolor y tensión muscular con <strong>electroestimulación TENS</strong> mediante parámetros controlados y aplicación segura.">
+                        Pain relief and muscle tension with <strong>TENS electrostimulation</strong> through controlled parameters and safe application.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 2: Rehabilitación -->
+                <!-- Benefit 2: Rehabilitation -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -135,11 +195,18 @@
                             <path d="M9 12h6"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Electroestimulación en Fisioterapia</h3>
-                    <p>Perfecta para procesos de <strong>electroestimulación en fisioterapia</strong> orientados a recuperación, activación y reeducación muscular.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Electrostimulation in Physiotherapy" data-es="Electroestimulación en Fisioterapia">Electrostimulation in Physiotherapy</span>
+                    </h3>
+                    <p>
+                        <span data-en="Perfect for <strong>electrostimulation in physiotherapy</strong> processes oriented to recovery, activation and muscle reeducation."
+                              data-es="Perfecta para procesos de <strong>electroestimulación en fisioterapia</strong> orientados a recuperación, activación y reeducación muscular.">
+                        Perfect for <strong>electrostimulation in physiotherapy</strong> processes oriented to recovery, activation and muscle reeducation.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 3: Fortalecimiento -->
+                <!-- Benefit 3: Strengthening -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -151,11 +218,18 @@
                             <path d="M8 8l8 8"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Activación y Tonificación</h3>
-                    <p>La <strong>electro estimulación</strong> ayuda a activar grupos musculares específicos, mejorar el tono y apoyar rutinas de fortalecimiento.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Activation and Toning" data-es="Activación y Tonificación">Activation and Toning</span>
+                    </h3>
+                    <p>
+                        <span data-en="<strong>Electro stimulation</strong> helps activate specific muscle groups, improve tone and support strengthening routines."
+                              data-es="La <strong>electro estimulación</strong> ayuda a activar grupos musculares específicos, mejorar el tono y apoyar rutinas de fortalecimiento.">
+                        <strong>Electro stimulation</strong> helps activate specific muscle groups, improve tone and support strengthening routines.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 4: Sesiones guiadas -->
+                <!-- Benefit 4: Guided Sessions -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -163,8 +237,15 @@
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Aplicación Profesional</h3>
-                    <p>Sesiones personalizadas con enfoque seguro: colocación precisa, intensidad progresiva y objetivos claros según tu necesidad.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Professional Application" data-es="Aplicación Profesional">Professional Application</span>
+                    </h3>
+                    <p>
+                        <span data-en="Personalized sessions with safe approach: precise placement, progressive intensity and clear objectives according to your need."
+                              data-es="Sesiones personalizadas con enfoque seguro: colocación precisa, intensidad progresiva y objetivos claros según tu necesidad.">
+                        Personalized sessions with safe approach: precise placement, progressive intensity and clear objectives according to your need.
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -173,96 +254,120 @@
     <!-- PRICING SECTION -->
     <section id="planes" class="section">
         <div class="container">
-            <h2 class="heading-secondary">Elige Tu Plan de Electroestimulación</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Choose Your Electrostimulation Plan" data-es="Elige Tu Plan de Electroestimulación">Choose Your Electrostimulation Plan</span>
+            </h2>
             <p class="text-large text-center" style="margin-bottom: 1rem;">
-                Todos nuestros planes incluyen <strong>electroestimulación profesional</strong> con acompañamiento
+                <span data-en="All our plans include <strong>professional electrostimulation</strong> with guidance"
+                      data-es="Todos nuestros planes incluyen <strong>electroestimulación profesional</strong> con acompañamiento">
+                All our plans include <strong>professional electrostimulation</strong> with guidance
+                </span>
             </p>
             <p class="text-center" style="color: var(--color-primary); margin-bottom: 3rem;">
-                📍 <strong>Electroestimulación Bogotá</strong> con enfoque en resultados
+                📍 <strong>
+                <span data-en="Electrostimulation Bogotá with results-focused approach"
+                      data-es="Electroestimulación Bogotá con enfoque en resultados">
+                Electrostimulation Bogotá with results-focused approach
+                </span>
+                </strong>
             </p>
             
             <div class="pricing-grid">
                 <!-- PLAN 1: FLASH -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Electroestimulación Rápida</h3>
-                    <p class="pricing-subtitle">23 sesiones en 5 citas</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Quick Electrostimulation" data-es="Electroestimulación Rápida">Quick Electrostimulation</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="23 sessions in 5 appointments" data-es="23 sesiones en 5 citas">23 sessions in 5 appointments</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>450.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>5 sesiones de electroestimulación</strong></li>
-                        <li>Electroestimulación TENS</li>
-                        <li>Electroestimulación en fisioterapia</li>
-                        <li>5 sesiones de masaje reductor</li>
-                        <li>5 sesiones de maderoterapia</li>
-                        <li>2 corrientes rusas</li>
-                        <li>1 sesión de radiofrecuencia</li>
-                        <li>5 sesiones de termoterapia</li>
+                        <li><strong><span data-en="5 electrostimulation sessions" data-es="5 sesiones de electroestimulación">5 electrostimulation sessions</span></strong></li>
+                        <li><span data-en="TENS Electrostimulation" data-es="Electroestimulación TENS">TENS Electrostimulation</span></li>
+                        <li><span data-en="Electrostimulation in physiotherapy" data-es="Electroestimulación en fisioterapia">Electrostimulation in physiotherapy</span></li>
+                        <li><span data-en="5 reducing massage sessions" data-es="5 sesiones de masaje reductor">5 reducing massage sessions</span></li>
+                        <li><span data-en="5 wood therapy sessions" data-es="5 sesiones de maderoterapia">5 wood therapy sessions</span></li>
+                        <li><span data-en="2 Russian currents" data-es="2 corrientes rusas">2 Russian currents</span></li>
+                        <li><span data-en="1 radiofrequency session" data-es="1 sesión de radiofrecuencia">1 radiofrequency session</span></li>
+                        <li><span data-en="5 thermotherapy sessions" data-es="5 sesiones de termoterapia">5 thermotherapy sessions</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Electroestimulación Rápida')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Quick Electrostimulation', 'Plan Flash - Electroestimulación Rápida')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Ahora
+                        <span data-en="Book Now" data-es="Reservar Ahora">Book Now</span>
                     </button>
                 </div>
 
-                <!-- PLAN 2: 10 SESIONES (DESTACADO) -->
+                <!-- PLAN 2: 10 SESSIONS (FEATURED) -->
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">💎 Más Popular</div>
-                    <h3 class="pricing-title">Electroestimulación Profesional</h3>
-                    <p class="pricing-subtitle">10 sesiones completas</p>
+                    <div class="pricing-badge">
+                        <span data-en="💎 Most Popular" data-es="💎 Más Popular">💎 Most Popular</span>
+                    </div>
+                    <h3 class="pricing-title">
+                        <span data-en="Professional Electrostimulation" data-es="Electroestimulación Profesional">Professional Electrostimulation</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="10 complete sessions" data-es="10 sesiones completas">10 complete sessions</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>650.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Electroestimulación guiada</strong></li>
-                        <li>Electroestimulación en fisioterapia</li>
-                        <li>Electroestimulación TENS</li>
-                        <li>Activación muscular por zonas</li>
-                        <li>Masaje reductor complementario</li>
-                        <li>Maderoterapia complementaria</li>
-                        <li>Ultrasonido terapéutico</li>
-                        <li>Electro estimulación progresiva</li>
-                        <li>Termoterapia relajante</li>
+                        <li><strong><span data-en="Guided electrostimulation" data-es="Electroestimulación guiada">Guided electrostimulation</span></strong></li>
+                        <li><span data-en="Electrostimulation in physiotherapy" data-es="Electroestimulación en fisioterapia">Electrostimulation in physiotherapy</span></li>
+                        <li><span data-en="TENS Electrostimulation" data-es="Electroestimulación TENS">TENS Electrostimulation</span></li>
+                        <li><span data-en="Muscle activation by zones" data-es="Activación muscular por zonas">Muscle activation by zones</span></li>
+                        <li><span data-en="Complementary reducing massage" data-es="Masaje reductor complementario">Complementary reducing massage</span></li>
+                        <li><span data-en="Complementary wood therapy" data-es="Maderoterapia complementaria">Complementary wood therapy</span></li>
+                        <li><span data-en="Therapeutic ultrasound" data-es="Ultrasonido terapéutico">Therapeutic ultrasound</span></li>
+                        <li><span data-en="Progressive electro stimulation" data-es="Electro estimulación progresiva">Progressive electro stimulation</span></li>
+                        <li><span data-en="Relaxing thermotherapy" data-es="Termoterapia relajante">Relaxing thermotherapy</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sesiones - Electroestimulación Profesional')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sessions - Professional Electrostimulation', 'Plan 10 Sesiones - Electroestimulación Profesional')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Plan Completo
+                        <span data-en="Book Complete Plan" data-es="Reservar Plan Completo">Book Complete Plan</span>
                     </button>
                 </div>
 
-                <!-- PLAN 3: 20 SESIONES -->
+                <!-- PLAN 3: 20 SESSIONS -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Electroestimulación Intensiva</h3>
-                    <p class="pricing-subtitle">20 sesiones - Rehabilitación</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Intensive Electrostimulation" data-es="Electroestimulación Intensiva">Intensive Electrostimulation</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="20 sessions - Rehabilitation" data-es="20 sesiones - Rehabilitación">20 sessions - Rehabilitation</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>1.300.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Electroestimulación en fisioterapia</strong></li>
-                        <li>Electroestimulación TENS avanzada</li>
-                        <li>Activación muscular profunda</li>
-                        <li>Protocolos por objetivo</li>
-                        <li>20 sesiones personalizadas</li>
-                        <li>Masaje reductor avanzado</li>
-                        <li>Maderoterapia profunda</li>
-                        <li>Ultrasonido + Cavitación</li>
-                        <li>Seguimiento y progresión</li>
+                        <li><strong><span data-en="Electrostimulation in physiotherapy" data-es="Electroestimulación en fisioterapia">Electrostimulation in physiotherapy</span></strong></li>
+                        <li><span data-en="Advanced TENS Electrostimulation" data-es="Electroestimulación TENS avanzada">Advanced TENS Electrostimulation</span></li>
+                        <li><span data-en="Deep muscle activation" data-es="Activación muscular profunda">Deep muscle activation</span></li>
+                        <li><span data-en="Protocols by objective" data-es="Protocolos por objetivo">Protocols by objective</span></li>
+                        <li><span data-en="20 personalized sessions" data-es="20 sesiones personalizadas">20 personalized sessions</span></li>
+                        <li><span data-en="Advanced reducing massage" data-es="Masaje reductor avanzado">Advanced reducing massage</span></li>
+                        <li><span data-en="Deep wood therapy" data-es="Maderoterapia profunda">Deep wood therapy</span></li>
+                        <li><span data-en="Ultrasound + Cavitation" data-es="Ultrasonido + Cavitación">Ultrasound + Cavitation</span></li>
+                        <li><span data-en="Follow-up and progression" data-es="Seguimiento y progresión">Follow-up and progression</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sesiones - Electroestimulación Intensiva')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sessions - Intensive Electrostimulation', 'Plan 20 Sesiones - Electroestimulación Intensiva')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Tratamiento
+                        <span data-en="Book Treatment" data-es="Reservar Tratamiento">Book Treatment</span>
                     </button>
                 </div>
             </div>
@@ -273,30 +378,63 @@
     <section class="section section-bg">
         <div class="container">
             <div class="trust-section">
-                <h2 class="heading-secondary" style="margin-bottom: 1rem;">¿Para Qué Sirve la Electroestimulación?</h2>
+                <h2 class="heading-secondary" style="margin-bottom: 1rem;">
+                    <span data-en="What is Electrostimulation Used For?" data-es="¿Para Qué Sirve la Electroestimulación?">What is Electrostimulation Used For?</span>
+                </h2>
                 <p class="text-large text-center" style="margin-bottom: 2rem; color: var(--color-text-light);">
-                    Aplicamos <strong>electroestimulación</strong> con enfoque funcional y terapéutico, incluyendo <strong>electroestimulación TENS</strong> y <strong>electroestimulación en fisioterapia</strong>.
+                    <span data-en="We apply <strong>electrostimulation</strong> with functional and therapeutic approach, including <strong>TENS electrostimulation</strong> and <strong>electrostimulation in physiotherapy</strong>."
+                          data-es="Aplicamos <strong>electroestimulación</strong> con enfoque funcional y terapéutico, incluyendo <strong>electroestimulación TENS</strong> y <strong>electroestimulación en fisioterapia</strong>.">
+                    We apply <strong>electrostimulation</strong> with functional and therapeutic approach, including <strong>TENS electrostimulation</strong> and <strong>electrostimulation in physiotherapy</strong>.
+                    </span>
                 </p>
                 
                 <div class="benefits-grid" style="margin-top: 2rem;">
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">🧠 Alivio del Dolor (TENS)</h3>
-                        <p>La <strong>electroestimulación TENS</strong> ayuda a disminuir molestias musculares y tensión, ideal para zonas con carga o contractura.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            🧠 <span data-en="Pain Relief (TENS)" data-es="Alivio del Dolor (TENS)">Pain Relief (TENS)</span>
+                        </h3>
+                        <p>
+                            <span data-en="<strong>TENS electrostimulation</strong> helps reduce muscle discomfort and tension, ideal for areas with load or contracture."
+                                  data-es="La <strong>electroestimulación TENS</strong> ayuda a disminuir molestias musculares y tensión, ideal para zonas con carga o contractura.">
+                            <strong>TENS electrostimulation</strong> helps reduce muscle discomfort and tension, ideal for areas with load or contracture.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">💪 Activación Muscular</h3>
-                        <p>La <strong>electro estimulación</strong> activa fibras musculares para mejorar el tono y apoyar procesos de fortalecimiento por grupos.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            💪 <span data-en="Muscle Activation" data-es="Activación Muscular">Muscle Activation</span>
+                        </h3>
+                        <p>
+                            <span data-en="<strong>Electro stimulation</strong> activates muscle fibers to improve tone and support strengthening processes by groups."
+                                  data-es="La <strong>electro estimulación</strong> activa fibras musculares para mejorar el tono y apoyar procesos de fortalecimiento por grupos.">
+                            <strong>Electro stimulation</strong> activates muscle fibers to improve tone and support strengthening processes by groups.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">🦵 Rehabilitación</h3>
-                        <p>La <strong>electroestimulación en fisioterapia</strong> apoya la recuperación muscular, ayudando a reeducar y activar zonas específicas.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            🦵 <span data-en="Rehabilitation" data-es="Rehabilitación">Rehabilitation</span>
+                        </h3>
+                        <p>
+                            <span data-en="<strong>Electrostimulation in physiotherapy</strong> supports muscle recovery, helping to reeducate and activate specific areas."
+                                  data-es="La <strong>electroestimulación en fisioterapia</strong> apoya la recuperación muscular, ayudando a reeducar y activar zonas específicas.">
+                            <strong>Electrostimulation in physiotherapy</strong> supports muscle recovery, helping to reeducate and activate specific areas.
+                            </span>
+                        </p>
                     </div>
                     
                     <div class="benefit-card">
-                        <h3 class="heading-tertiary" style="color: var(--color-primary);">⚡ Sesiones Personalizadas</h3>
-                        <p>En <strong>electroestimulación Bogotá</strong> ajustamos intensidad y objetivos según tu caso para una experiencia controlada y progresiva.</p>
+                        <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                            ⚡ <span data-en="Personalized Sessions" data-es="Sesiones Personalizadas">Personalized Sessions</span>
+                        </h3>
+                        <p>
+                            <span data-en="In <strong>electrostimulation Bogotá</strong> we adjust intensity and objectives according to your case for a controlled and progressive experience."
+                                  data-es="En <strong>electroestimulación Bogotá</strong> ajustamos intensidad y objetivos según tu caso para una experiencia controlada y progresiva.">
+                            In <strong>electrostimulation Bogotá</strong> we adjust intensity and objectives according to your case for a controlled and progressive experience.
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -307,23 +445,33 @@
     <section class="section">
         <div class="container">
             <div class="trust-section">
-                <h2 class="heading-secondary" style="margin-bottom: 2rem;">Especialistas en Electroestimulación Bogotá</h2>
+                <h2 class="heading-secondary" style="margin-bottom: 2rem;">
+                    <span data-en="Electrostimulation Specialists in Bogotá" data-es="Especialistas en Electroestimulación Bogotá">Electrostimulation Specialists in Bogotá</span>
+                </h2>
                 <div class="trust-grid">
                     <div class="trust-item">
                         <div class="trust-number">800+</div>
-                        <div class="trust-label">Pacientes Atendidos</div>
+                        <div class="trust-label">
+                            <span data-en="Patients Treated" data-es="Pacientes Atendidos">Patients Treated</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">98%</div>
-                        <div class="trust-label">Mejora en Bienestar</div>
+                        <div class="trust-label">
+                            <span data-en="Wellness Improvement" data-es="Mejora en Bienestar">Wellness Improvement</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">5</div>
-                        <div class="trust-label">Años de Experiencia</div>
+                        <div class="trust-label">
+                            <span data-en="Years of Experience" data-es="Años de Experiencia">Years of Experience</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">4.9★</div>
-                        <div class="trust-label">Calificación Google</div>
+                        <div class="trust-label">
+                            <span data-en="Google Rating" data-es="Calificación Google">Google Rating</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -333,7 +481,9 @@
     <!-- LOCATION SECTION -->
     <section class="section section-bg">
         <div class="container-narrow">
-            <h2 class="heading-secondary">Electroestimulación Bogotá</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Electrostimulation Bogotá" data-es="Electroestimulación Bogotá">Electrostimulation Bogotá</span>
+            </h2>
             <div class="location-card">
                 <div class="location-icon">
                     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -345,60 +495,129 @@
                     <h3 class="heading-tertiary">Massage Spa Natalia Ruiz</h3>
                     <p>Kr 13 #32-33, Teusaquillo, Bogotá</p>
                     <p style="color: var(--color-primary); margin-top: 0.5rem;">
-                        <strong>Electroestimulación en Bogotá</strong> - Cerca de Chapinero
+                        <strong>
+                        <span data-en="Electrostimulation in Bogotá - Near Chapinero"
+                              data-es="Electroestimulación en Bogotá - Cerca de Chapinero">
+                        Electrostimulation in Bogotá - Near Chapinero
+                        </span>
+                        </strong>
                     </p>
                     <p style="margin-top: 1rem; color: var(--color-text-light);">
-                        📞 Tel: <strong>313 877 2082</strong> | 
-                        💰 <strong>Electroestimulación Bogotá desde $450.000</strong>
+                        📞 <span data-en="Tel" data-es="Tel">Tel</span>: <strong>313 877 2082</strong> | 
+                        💰 <strong>
+                        <span data-en="Electrostimulation Bogotá from $450.000"
+                              data-es="Electroestimulación Bogotá desde $450.000">
+                        Electrostimulation Bogotá from $450.000
+                        </span>
+                        </strong>
                     </p>
                 </div>
             </div>
             
             <div style="margin-top: 2rem; text-align: center;">
-                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Solicitar información - Electroestimulación')">
+                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Request information - Electrostimulation', 'Solicitar información - Electroestimulación')">
                     <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.10-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                     </svg>
-                    Agendar Primera Sesión
+                    <span data-en="Schedule First Session" data-es="Agendar Primera Sesión">Schedule First Session</span>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <div class="whatsapp-float" onclick="contactWhatsApp(' - Electroestimulación')">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07 -.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z'/%3E%3C/svg%3E" alt="WhatsApp">
+    <div class="whatsapp-float" onclick="contactWhatsApp(' - Electrostimulation', ' - Electroestimulación')">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z'/%3E%3C/svg%3E" alt="WhatsApp">
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2025 Massage Spa Natalia Ruiz | Electroestimulación en Bogotá</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kr 13 #32-33, Teusaquillo | Tel: 313 877 2082</p>
+        <p>&copy; 2025 Massage Spa Natalia Ruiz | <span data-en="Electrostimulation in Bogotá" data-es="Electroestimulación en Bogotá">Electrostimulation in Bogotá</span></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kr 13 #32-33, Teusaquillo | <span data-en="Tel" data-es="Tel">Tel</span>: 313 877 2082</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
-            Electroestimulación • Electroestimulación TENS • Electroestimulación Bogotá • Electroestimulación en fisioterapia • Electro estimulación
+            <span data-en="Electrostimulation • TENS Electrostimulation • Electrostimulation Bogotá • Electrostimulation in physiotherapy • Electro stimulation"
+                  data-es="Electroestimulación • Electroestimulación TENS • Electroestimulación Bogotá • Electroestimulación en fisioterapia • Electro estimulación">
+            Electrostimulation • TENS Electrostimulation • Electrostimulation Bogotá • Electrostimulation in physiotherapy • Electro stimulation
+            </span>
         </p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Configuración
+        // Configuration
         const WHATSAPP_NUMBER = '573138772082';
         const CONVERSION_ID = 'AW-17876723428';
         const CONVERSION_LABEL = 'l-F_CJzEjeQbEOTNpMxC';
         
-        // Función para contactar por WhatsApp
-        function contactWhatsApp(plan) {
-            const message = `Hola! Me interesa el ${plan} de electroestimulación. ¿Podrían darme más información?`;
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        // Current language (default English)
+        let currentLanguage = 'en';
+        
+        // Language toggle function
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            updateLanguage();
+            updateToggleButton();
+        }
+        
+        // Update all text elements based on current language
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en][data-es]');
             
-            // Tracking de conversión de Google Ads
+            elements.forEach(element => {
+                const englishText = element.getAttribute('data-en');
+                const spanishText = element.getAttribute('data-es');
+                
+                if (currentLanguage === 'en') {
+                    element.innerHTML = englishText;
+                } else {
+                    element.innerHTML = spanishText;
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (currentLanguage === 'es') {
+                metaDescription.setAttribute('content', 'Electroestimulación en Bogotá. Electroestimulación TENS y electro estimulación para fisioterapia con técnica profesional para recuperación muscular, dolor y fortalecimiento.');
+                document.title = 'Electroestimulación en Bogotá | Massage Spa Natalia Ruiz';
+            } else {
+                metaDescription.setAttribute('content', 'Electrostimulation in Bogotá. TENS electrostimulation and electro stimulation for physiotherapy with professional technique for muscle recovery, pain relief and strengthening.');
+                document.title = 'Electrostimulation in Bogotá | Massage Spa Natalia Ruiz';
+            }
+        }
+        
+        // Update toggle button appearance
+        function updateToggleButton() {
+            const toggleButton = document.querySelector('.language-toggle');
+            toggleButton.setAttribute('data-lang', currentLanguage);
+            
+            const buttonText = toggleButton.querySelector('span');
+            if (currentLanguage === 'en') {
+                buttonText.textContent = 'Español';
+            } else {
+                buttonText.textContent = 'English';
+            }
+        }
+        
+        // Contact WhatsApp function with language support
+        function contactWhatsApp(planEn, planEs = null) {
+            const plan = currentLanguage === 'en' ? planEn : (planEs || planEn);
+            const messageTemplate = currentLanguage === 'en' ? 
+                `Hello! I'm interested in the ${plan} electrostimulation. Could you give me more information?` :
+                `¡Hola! Me interesa el ${plan} de electroestimulación. ¿Podrían darme más información?`;
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageTemplate)}`;
+            
+            // Google Ads conversion tracking
             gtag('event', 'conversion', {
                 'send_to': `${CONVERSION_ID}/${CONVERSION_LABEL}`,
                 'event_category': 'Contacto',
                 'event_label': plan
             });
             
-            // Abrir WhatsApp
+            // Open WhatsApp
             window.open(url, '_blank');
         }
         
@@ -419,6 +638,12 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+        
+        // Initialize page in English
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage();
+            updateToggleButton();
         });
     </script>
 </body>

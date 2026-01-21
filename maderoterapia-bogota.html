@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maderoterapia en Bogotá. Tratamiento corporal con rodillos de madera certificados. Maderoterapia facial, abdominal y de glúteos. Resultados desde la primera sesión.">
-    <title>Maderoterapia en Bogotá | Massage Spa Natalia Ruiz</title>
+    <meta name="description" content="Wood therapy in Bogotá. Body treatment with certified wooden rollers. Facial, abdominal and glute wood therapy. Results from the first session.">
+    <title>Wood Therapy in Bogotá | Massage Spa Natalia Ruiz</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,19 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-
     <link rel="stylesheet" href="style-template.css">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T1Q2Y5FGJX');
-</script>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1Q2Y5FGJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T1Q2Y5FGJX');
+    </script>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -47,6 +44,46 @@
             'allow_enhanced_conversions': true
         });
     </script>
+
+    <!-- Language Toggle Styles -->
+    <style>
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--color-primary, #2563eb);
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .language-toggle:hover {
+            background: var(--color-primary-dark, #1d4ed8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .language-toggle::before {
+            content: "🇪🇸";
+            margin-right: 8px;
+        }
+
+        .language-toggle[data-lang="es"]::before {
+            content: "🇺🇸";
+        }
+
+        /* Ensure elements have data attributes for translation */
+        [data-en], [data-es] {
+            transition: opacity 0.2s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -54,32 +91,44 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Language Toggle Button -->
+    <button class="language-toggle" onclick="toggleLanguage()" data-lang="en">
+        <span data-en="English" data-es="Español">English</span>
+    </button>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
-                <!-- Contenido texto (izquierda) -->
+                <!-- Content text (left) -->
                 <div class="hero-content">
-                    <p class="hero-subtitle">🪵 Instrumentos de Madera Certificados</p>
-                    <h1 class="heading-primary">Maderoterapia en Bogotá</h1>
+                    <p class="hero-subtitle">
+                        <span data-en="🪵 Certified Wooden Instruments" data-es="🪵 Instrumentos de Madera Certificados">🪵 Certified Wooden Instruments</span>
+                    </p>
+                    <h1 class="heading-primary">
+                        <span data-en="Wood Therapy in Bogotá" data-es="Maderoterapia en Bogotá">Wood Therapy in Bogotá</span>
+                    </h1>
                     <p class="hero-description">
-                        Remodela tu cuerpo con <strong class="text-highlight">maderoterapia corporal profesional</strong> en Bogotá. Utilizamos instrumentos de madera anatómicos para maderoterapia de abdomen, facial y glúteos con resultados visibles desde la primera sesión.
+                        <span data-en="Reshape your body with <strong class='text-highlight'>professional body wood therapy</strong> in Bogotá. We use anatomical wooden instruments for abdominal, facial and glute wood therapy with visible results from the first session."
+                              data-es="Remodela tu cuerpo con <strong class='text-highlight'>maderoterapia corporal profesional</strong> en Bogotá. Utilizamos instrumentos de madera anatómicos para maderoterapia de abdomen, facial y glúteos con resultados visibles desde la primera sesión.">
+                        Reshape your body with <strong class="text-highlight">professional body wood therapy</strong> in Bogotá. We use anatomical wooden instruments for abdominal, facial and glute wood therapy with visible results from the first session.
+                        </span>
                     </p>
                     <a href="#planes" class="btn btn-primary btn-large" onclick="trackCTA('hero_ver_planes')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Ver Planes y Precios
+                        <span data-en="View Plans and Pricing" data-es="Ver Planes y Precios">View Plans and Pricing</span>
                     </a>
                 </div>
 
-                <!-- Imagen (derecha) -->
+                <!-- Image (right) -->
                 <div class="hero-image-wrapper">
                     <div class="hero-image-container">
-                        <!-- IMAGEN PLACEHOLDER - REEMPLAZAR CON TU IMAGEN DE MADEROTERAPIA -->
+                        <!-- WOOD THERAPY IMAGE PLACEHOLDER - REPLACE WITH YOUR IMAGE -->
                         <img 
                             src="/portadas/masoterapia.webp" 
-                            alt="Maderoterapia profesional en Bogotá"
+                            alt="Professional wood therapy in Bogotá"
                             class="hero-image"
                             loading="eager"
                         >
@@ -92,9 +141,11 @@
     <!-- VIDEO SECTION -->
     <section class="section">
         <div class="video-wrapper">
-            <h2 class="heading-secondary">Conoce la Maderoterapia</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Learn About Wood Therapy" data-es="Conoce la Maderoterapia">Learn About Wood Therapy</span>
+            </h2>
             <div class="video-container">
-                <!-- REEMPLAZAR CON TU VIDEO DE MADEROTERAPIA -->
+                <!-- REPLACE WITH YOUR WOOD THERAPY VIDEO -->
                 <iframe src="Masoterapia.mp4" 
                         allowfullscreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
@@ -106,9 +157,11 @@
     <!-- BENEFITS SECTION -->
     <section class="section section-bg">
         <div class="container">
-            <h2 class="heading-secondary">¿Qué es la Maderoterapia?</h2>
+            <h2 class="heading-secondary">
+                <span data-en="What is Wood Therapy?" data-es="¿Qué es la Maderoterapia?">What is Wood Therapy?</span>
+            </h2>
             <div class="benefits-grid">
-                <!-- Benefit 1: Instrumentos Certificados -->
+                <!-- Benefit 1: Certified Instruments -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -117,11 +170,18 @@
                             <line x1="9" y1="21" x2="9" y2="9"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Instrumentos de Madera</h3>
-                    <p>Utilizamos rodillos y copas de madera certificada diseñados anatómicamente para maderoterapia corporal efectiva y segura.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Wooden Instruments" data-es="Instrumentos de Madera">Wooden Instruments</span>
+                    </h3>
+                    <p>
+                        <span data-en="We use rollers and cups of certified wood anatomically designed for effective and safe body wood therapy."
+                              data-es="Utilizamos rodillos y copas de madera certificada diseñados anatómicamente para maderoterapia corporal efectiva y segura.">
+                        We use rollers and cups of certified wood anatomically designed for effective and safe body wood therapy.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 2: Remodela el Cuerpo -->
+                <!-- Benefit 2: Reshape the Body -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -130,11 +190,18 @@
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Remodela y Tonifica</h3>
-                    <p>La maderoterapia en abdomen y glúteos activa la circulación, elimina celulitis y reafirma la piel de forma natural.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Reshape and Tone" data-es="Remodela y Tonifica">Reshape and Tone</span>
+                    </h3>
+                    <p>
+                        <span data-en="Wood therapy on abdomen and glutes activates circulation, eliminates cellulite and firms the skin naturally."
+                              data-es="La maderoterapia en abdomen y glúteos activa la circulación, elimina celulitis y reafirma la piel de forma natural.">
+                        Wood therapy on abdomen and glutes activates circulation, eliminates cellulite and firms the skin naturally.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 3: Zonas Específicas -->
+                <!-- Benefit 3: Specific Areas -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -144,11 +211,18 @@
                             <line x1="15" y1="9" x2="15.01" y2="9"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Facial y Corporal</h3>
-                    <p>Ofrecemos maderoterapia facial para rejuvenecimiento y maderoterapia corporal para todo el cuerpo. Tratamiento 100% personalizado.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Facial and Body" data-es="Facial y Corporal">Facial and Body</span>
+                    </h3>
+                    <p>
+                        <span data-en="We offer facial wood therapy for rejuvenation and body wood therapy for the entire body. 100% personalized treatment."
+                              data-es="Ofrecemos maderoterapia facial para rejuvenecimiento y maderoterapia corporal para todo el cuerpo. Tratamiento 100% personalizado.">
+                        We offer facial wood therapy for rejuvenation and body wood therapy for the entire body. 100% personalized treatment.
+                        </span>
+                    </p>
                 </div>
                 
-                <!-- Benefit 4: Técnica Colombiana -->
+                <!-- Benefit 4: Colombian Technique -->
                 <div class="benefit-card">
                     <div class="icon-wrapper">
                         <svg class="icon-svg" viewBox="0 0 24 24">
@@ -156,40 +230,80 @@
                             <circle cx="12" cy="7" r="4"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Técnica Profesional</h3>
-                    <p>Maderoterapia Colombia certificada. Terapeutas especializadas en maderoterapia bogotá con más de 5 años de experiencia.</p>
+                    <h3 class="heading-tertiary">
+                        <span data-en="Professional Technique" data-es="Técnica Profesional">Professional Technique</span>
+                    </h3>
+                    <p>
+                        <span data-en="Certified Colombian wood therapy. Therapists specialized in Bogotá wood therapy with more than 5 years of experience."
+                              data-es="Maderoterapia Colombia certificada. Terapeutas especializadas en maderoterapia bogotá con más de 5 años de experiencia.">
+                        Certified Colombian wood therapy. Therapists specialized in Bogotá wood therapy with more than 5 years of experience.
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AREAS DE TRATAMIENTO -->
+    <!-- TREATMENT AREAS -->
     <section class="section">
         <div class="container-narrow">
-            <h2 class="heading-secondary">Áreas de Tratamiento</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Treatment Areas" data-es="Áreas de Tratamiento">Treatment Areas</span>
+            </h2>
             <p class="text-large text-center" style="margin-bottom: 2rem;">
-                La <strong>maderoterapia</strong> se puede aplicar en diferentes zonas del cuerpo
+                <span data-en="<strong>Wood therapy</strong> can be applied to different areas of the body"
+                      data-es="La <strong>maderoterapia</strong> se puede aplicar en diferentes zonas del cuerpo">
+                <strong>Wood therapy</strong> can be applied to different areas of the body
+                </span>
             </p>
             
             <div class="benefits-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                 <div class="benefit-card">
-                    <h3 class="heading-tertiary" style="color: var(--color-primary);">Abdomen</h3>
-                    <p>Maderoterapia abdomen para reducir cintura y eliminar grasa localizada</p>
+                    <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                        <span data-en="Abdomen" data-es="Abdomen">Abdomen</span>
+                    </h3>
+                    <p>
+                        <span data-en="Abdominal wood therapy to reduce waist and eliminate localized fat"
+                              data-es="Maderoterapia abdomen para reducir cintura y eliminar grasa localizada">
+                        Abdominal wood therapy to reduce waist and eliminate localized fat
+                        </span>
+                    </p>
                 </div>
                 
                 <div class="benefit-card">
-                    <h3 class="heading-tertiary" style="color: var(--color-primary);">Glúteos</h3>
-                    <p>Maderoterapia en glúteos para levantar, tonificar y reafirmar</p>
+                    <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                        <span data-en="Glutes" data-es="Glúteos">Glutes</span>
+                    </h3>
+                    <p>
+                        <span data-en="Glute wood therapy to lift, tone and firm"
+                              data-es="Maderoterapia en glúteos para levantar, tonificar y reafirmar">
+                        Glute wood therapy to lift, tone and firm
+                        </span>
+                    </p>
                 </div>
                 
                 <div class="benefit-card">
-                    <h3 class="heading-tertiary" style="color: var(--color-primary);">Rostro</h3>
-                    <p>Maderoterapia facial para rejuvenecer y definir contorno facial</p>
+                    <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                        <span data-en="Face" data-es="Rostro">Face</span>
+                    </h3>
+                    <p>
+                        <span data-en="Facial wood therapy to rejuvenate and define facial contour"
+                              data-es="Maderoterapia facial para rejuvenecer y definir contorno facial">
+                        Facial wood therapy to rejuvenate and define facial contour
+                        </span>
+                    </p>
                 </div>
                 
                 <div class="benefit-card">
-                    <h3 class="heading-tertiary" style="color: var(--color-primary);">Cuerpo Completo</h3>
-                    <p>Maderoterapia corporal integral en piernas, brazos y espalda</p>
+                    <h3 class="heading-tertiary" style="color: var(--color-primary);">
+                        <span data-en="Full Body" data-es="Cuerpo Completo">Full Body</span>
+                    </h3>
+                    <p>
+                        <span data-en="Comprehensive body wood therapy on legs, arms and back"
+                              data-es="Maderoterapia corporal integral en piernas, brazos y espalda">
+                        Comprehensive body wood therapy on legs, arms and back
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -198,90 +312,109 @@
     <!-- PRICING SECTION -->
     <section id="planes" class="section section-bg">
         <div class="container">
-            <h2 class="heading-secondary">Planes de Maderoterapia en Bogotá</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Wood Therapy Plans in Bogotá" data-es="Planes de Maderoterapia en Bogotá">Wood Therapy Plans in Bogotá</span>
+            </h2>
             <p class="text-large text-center" style="margin-bottom: 3rem;">
-                Todos nuestros planes incluyen <strong>maderoterapia profesional</strong> con instrumentos certificados
+                <span data-en="All our plans include <strong>professional wood therapy</strong> with certified instruments"
+                      data-es="Todos nuestros planes incluyen <strong>maderoterapia profesional</strong> con instrumentos certificados">
+                All our plans include <strong>professional wood therapy</strong> with certified instruments
+                </span>
             </p>
             
             <div class="pricing-grid">
                 <!-- PLAN 1: FLASH -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Maderoterapia Express</h3>
-                    <p class="pricing-subtitle">23 sesiones en 5 citas</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Express Wood Therapy" data-es="Maderoterapia Express">Express Wood Therapy</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="23 sessions in 5 appointments" data-es="23 sesiones en 5 citas">23 sessions in 5 appointments</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>450.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>5 sesiones de maderoterapia</strong></li>
-                        <li>5 sesiones de masaje reductor</li>
-                        <li>5 sesiones de drenaje linfático</li>
-                        <li>2 corrientes rusas</li>
-                        <li>1 sesión de radiofrecuencia</li>
-                        <li>5 sesiones de termoterapia</li>
-                        <li>1 zona del cuerpo a elegir</li>
+                        <li><strong><span data-en="5 wood therapy sessions" data-es="5 sesiones de maderoterapia">5 wood therapy sessions</span></strong></li>
+                        <li><span data-en="5 reducing massage sessions" data-es="5 sesiones de masaje reductor">5 reducing massage sessions</span></li>
+                        <li><span data-en="5 lymphatic drainage sessions" data-es="5 sesiones de drenaje linfático">5 lymphatic drainage sessions</span></li>
+                        <li><span data-en="2 Russian currents" data-es="2 corrientes rusas">2 Russian currents</span></li>
+                        <li><span data-en="1 radiofrequency session" data-es="1 sesión de radiofrecuencia">1 radiofrequency session</span></li>
+                        <li><span data-en="5 thermotherapy sessions" data-es="5 sesiones de termoterapia">5 thermotherapy sessions</span></li>
+                        <li><span data-en="1 body area of choice" data-es="1 zona del cuerpo a elegir">1 body area of choice</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Maderoterapia Express')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan Flash - Express Wood Therapy', 'Plan Flash - Maderoterapia Express')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Ahora
+                        <span data-en="Book Now" data-es="Reservar Ahora">Book Now</span>
                     </button>
                 </div>
 
-                <!-- PLAN 2: 10 SESIONES (DESTACADO) -->
+                <!-- PLAN 2: 10 SESSIONS (FEATURED) -->
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">💎 Más Popular</div>
-                    <h3 class="pricing-title">Maderoterapia Completa</h3>
-                    <p class="pricing-subtitle">10 sesiones profesionales</p>
+                    <div class="pricing-badge">
+                        <span data-en="💎 Most Popular" data-es="💎 Más Popular">💎 Most Popular</span>
+                    </div>
+                    <h3 class="pricing-title">
+                        <span data-en="Complete Wood Therapy" data-es="Maderoterapia Completa">Complete Wood Therapy</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="10 professional sessions" data-es="10 sesiones profesionales">10 professional sessions</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>650.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Maderoterapia corporal certificada</strong></li>
-                        <li>Maderoterapia abdomen o glúteos</li>
-                        <li>Masaje reductor complementario</li>
-                        <li>Drenaje linfático manual</li>
-                        <li>Ultrasonido reductivo</li>
-                        <li>Electro estimulación</li>
-                        <li>Termoterapia relajante</li>
-                        <li>Tratamiento personalizado</li>
+                        <li><strong><span data-en="Certified body wood therapy" data-es="Maderoterapia corporal certificada">Certified body wood therapy</span></strong></li>
+                        <li><span data-en="Abdominal or glute wood therapy" data-es="Maderoterapia abdomen o glúteos">Abdominal or glute wood therapy</span></li>
+                        <li><span data-en="Complementary reducing massage" data-es="Masaje reductor complementario">Complementary reducing massage</span></li>
+                        <li><span data-en="Manual lymphatic drainage" data-es="Drenaje linfático manual">Manual lymphatic drainage</span></li>
+                        <li><span data-en="Reductive ultrasound" data-es="Ultrasonido reductivo">Reductive ultrasound</span></li>
+                        <li><span data-en="Electrostimulation" data-es="Electro estimulación">Electrostimulation</span></li>
+                        <li><span data-en="Relaxing thermotherapy" data-es="Termoterapia relajante">Relaxing thermotherapy</span></li>
+                        <li><span data-en="Personalized treatment" data-es="Tratamiento personalizado">Personalized treatment</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sesiones - Maderoterapia Completa')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 10 Sessions - Complete Wood Therapy', 'Plan 10 Sesiones - Maderoterapia Completa')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Plan Completo
+                        <span data-en="Book Complete Plan" data-es="Reservar Plan Completo">Book Complete Plan</span>
                     </button>
                 </div>
 
-                <!-- PLAN 3: 20 SESIONES -->
+                <!-- PLAN 3: 20 SESSIONS -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Maderoterapia Intensiva</h3>
-                    <p class="pricing-subtitle">20 sesiones - Resultados profundos</p>
+                    <h3 class="pricing-title">
+                        <span data-en="Intensive Wood Therapy" data-es="Maderoterapia Intensiva">Intensive Wood Therapy</span>
+                    </h3>
+                    <p class="pricing-subtitle">
+                        <span data-en="20 sessions - Deep results" data-es="20 sesiones - Resultados profundos">20 sessions - Deep results</span>
+                    </p>
                     <div class="pricing-price">
                         <span class="pricing-currency">$</span>1.300.000
                     </div>
                     
                     <ul class="pricing-features">
-                        <li><strong>Maderoterapia avanzada</strong></li>
-                        <li>Maderoterapia corporal completa</li>
-                        <li>Masaje reductor especializado</li>
-                        <li>Drenaje linfático brasileño</li>
-                        <li>Ultrasonido + Cavitación</li>
-                        <li>Electro estimulación muscular</li>
-                        <li>Termoterapia profunda</li>
-                        <li>Seguimiento personalizado</li>
+                        <li><strong><span data-en="Advanced wood therapy" data-es="Maderoterapia avanzada">Advanced wood therapy</span></strong></li>
+                        <li><span data-en="Complete body wood therapy" data-es="Maderoterapia corporal completa">Complete body wood therapy</span></li>
+                        <li><span data-en="Specialized reducing massage" data-es="Masaje reductor especializado">Specialized reducing massage</span></li>
+                        <li><span data-en="Brazilian lymphatic drainage" data-es="Drenaje linfático brasileño">Brazilian lymphatic drainage</span></li>
+                        <li><span data-en="Ultrasound + Cavitation" data-es="Ultrasonido + Cavitación">Ultrasound + Cavitation</span></li>
+                        <li><span data-en="Muscle electrostimulation" data-es="Electro estimulación muscular">Muscle electrostimulation</span></li>
+                        <li><span data-en="Deep thermotherapy" data-es="Termoterapia profunda">Deep thermotherapy</span></li>
+                        <li><span data-en="Personalized follow-up" data-es="Seguimiento personalizado">Personalized follow-up</span></li>
                     </ul>
                     
-                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sesiones - Maderoterapia Intensiva')">
+                    <button class="btn btn-primary btn-full-width" onclick="contactWhatsApp('Plan 20 Sessions - Intensive Wood Therapy', 'Plan 20 Sesiones - Maderoterapia Intensiva')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Reservar Tratamiento
+                        <span data-en="Book Treatment" data-es="Reservar Tratamiento">Book Treatment</span>
                     </button>
                 </div>
             </div>
@@ -292,23 +425,33 @@
     <section class="section">
         <div class="container">
             <div class="trust-section">
-                <h2 class="heading-secondary" style="margin-bottom: 2rem;">Maderoterapia Certificada en Bogotá</h2>
+                <h2 class="heading-secondary" style="margin-bottom: 2rem;">
+                    <span data-en="Certified Wood Therapy in Bogotá" data-es="Maderoterapia Certificada en Bogotá">Certified Wood Therapy in Bogotá</span>
+                </h2>
                 <div class="trust-grid">
                     <div class="trust-item">
                         <div class="trust-number">800+</div>
-                        <div class="trust-label">Sesiones Realizadas</div>
+                        <div class="trust-label">
+                            <span data-en="Sessions Performed" data-es="Sesiones Realizadas">Sessions Performed</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">100%</div>
-                        <div class="trust-label">Madera Certificada</div>
+                        <div class="trust-label">
+                            <span data-en="Certified Wood" data-es="Madera Certificada">Certified Wood</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">5+</div>
-                        <div class="trust-label">Años en Colombia</div>
+                        <div class="trust-label">
+                            <span data-en="Years in Colombia" data-es="Años en Colombia">Years in Colombia</span>
+                        </div>
                     </div>
                     <div class="trust-item">
                         <div class="trust-number">4.9★</div>
-                        <div class="trust-label">Calificación Google</div>
+                        <div class="trust-label">
+                            <span data-en="Google Rating" data-es="Calificación Google">Google Rating</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -318,7 +461,9 @@
     <!-- LOCATION SECTION -->
     <section class="section section-bg">
         <div class="container-narrow">
-            <h2 class="heading-secondary">¿Dónde Hacemos Maderoterapia?</h2>
+            <h2 class="heading-secondary">
+                <span data-en="Where do we perform Wood Therapy?" data-es="¿Dónde Hacemos Maderoterapia?">Where do we perform Wood Therapy?</span>
+            </h2>
             <div class="location-card">
                 <div class="location-icon">
                     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -330,53 +475,119 @@
                     <h3 class="heading-tertiary">Massage Spa Natalia Ruiz</h3>
                     <p>Kr 13 #32-33, Teusaquillo, Bogotá</p>
                     <p style="color: var(--color-primary); margin-top: 0.5rem;">
-                        <strong>Maderoterapia Bogotá</strong> - Centro especializado en maderoterapia Colombia
+                        <strong>
+                        <span data-en="Wood Therapy Bogotá - Specialized center in Colombian wood therapy"
+                              data-es="Maderoterapia Bogotá - Centro especializado en maderoterapia Colombia">
+                        Wood Therapy Bogotá - Specialized center in Colombian wood therapy
+                        </span>
+                        </strong>
                     </p>
                 </div>
             </div>
             
             <div style="margin-top: 2rem; text-align: center;">
-                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Solicitar información - Maderoterapia')">
+                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Request information - Wood Therapy', 'Solicitar información - Maderoterapia')">
                     <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                     </svg>
-                    Agenda Tu Primera Sesión
+                    <span data-en="Schedule Your First Session" data-es="Agenda Tu Primera Sesión">Schedule Your First Session</span>
                 </button>
             </div>
         </div>
     </section>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <div class="whatsapp-float" onclick="contactWhatsApp(' - Maderoterapia')">
+    <div class="whatsapp-float" onclick="contactWhatsApp(' - Wood Therapy', ' - Maderoterapia')">
         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z'/%3E%3C/svg%3E" alt="WhatsApp">
     </div>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2025 Massage Spa Natalia Ruiz | Maderoterapia en Bogotá</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Maderoterapia Colombia certificada | Tel: 313 877 2082</p>
+        <p>&copy; 2025 Massage Spa Natalia Ruiz | <span data-en="Wood Therapy in Bogotá" data-es="Maderoterapia en Bogotá">Wood Therapy in Bogotá</span></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <span data-en="Certified Colombian wood therapy | Tel: 313 877 2082" 
+                  data-es="Maderoterapia Colombia certificada | Tel: 313 877 2082">
+            Certified Colombian wood therapy | Tel: 313 877 2082
+            </span>
+        </p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Configuración
+        // Configuration
         const WHATSAPP_NUMBER = '573138772082';
         const CONVERSION_ID = 'AW-17876723428';
         const CONVERSION_LABEL = 'l-F_CJzEjeQbEOTNpMxC';
         
-        // Función para contactar por WhatsApp
-        function contactWhatsApp(plan) {
-            const message = `Hola! Me interesa el ${plan} de maderoterapia. ¿Podrían darme más información?`;
-            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        // Current language (default English)
+        let currentLanguage = 'en';
+        
+        // Language toggle function
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            updateLanguage();
+            updateToggleButton();
+        }
+        
+        // Update all text elements based on current language
+        function updateLanguage() {
+            const elements = document.querySelectorAll('[data-en][data-es]');
             
-            // Tracking de conversión de Google Ads
+            elements.forEach(element => {
+                const englishText = element.getAttribute('data-en');
+                const spanishText = element.getAttribute('data-es');
+                
+                if (currentLanguage === 'en') {
+                    element.innerHTML = englishText;
+                } else {
+                    element.innerHTML = spanishText;
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (currentLanguage === 'es') {
+                metaDescription.setAttribute('content', 'Maderoterapia en Bogotá. Tratamiento corporal con rodillos de madera certificados. Maderoterapia facial, abdominal y de glúteos. Resultados desde la primera sesión.');
+                document.title = 'Maderoterapia en Bogotá | Massage Spa Natalia Ruiz';
+            } else {
+                metaDescription.setAttribute('content', 'Wood therapy in Bogotá. Body treatment with certified wooden rollers. Facial, abdominal and glute wood therapy. Results from the first session.');
+                document.title = 'Wood Therapy in Bogotá | Massage Spa Natalia Ruiz';
+            }
+        }
+        
+        // Update toggle button appearance
+        function updateToggleButton() {
+            const toggleButton = document.querySelector('.language-toggle');
+            toggleButton.setAttribute('data-lang', currentLanguage);
+            
+            const buttonText = toggleButton.querySelector('span');
+            if (currentLanguage === 'en') {
+                buttonText.textContent = 'Español';
+            } else {
+                buttonText.textContent = 'English';
+            }
+        }
+        
+        // Contact WhatsApp function with language support
+        function contactWhatsApp(planEn, planEs = null) {
+            const plan = currentLanguage === 'en' ? planEn : (planEs || planEn);
+            const messageTemplate = currentLanguage === 'en' ? 
+                `Hello! I'm interested in the ${plan} wood therapy. Could you give me more information?` :
+                `¡Hola! Me interesa el ${plan} de maderoterapia. ¿Podrían darme más información?`;
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageTemplate)}`;
+            
+            // Google Ads conversion tracking
             gtag('event', 'conversion', {
                 'send_to': `${CONVERSION_ID}/${CONVERSION_LABEL}`,
                 'event_category': 'Contacto',
                 'event_label': plan
             });
             
-            // Abrir WhatsApp
+            // Open WhatsApp
             window.open(url, '_blank');
         }
         
@@ -397,6 +608,12 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+        
+        // Initialize page in English
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLanguage();
+            updateToggleButton();
         });
     </script>
 </body>

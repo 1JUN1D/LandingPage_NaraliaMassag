@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Masaje relajante en Bogotá. Especialistas en masaje relajante spa, masaje de espalda, masaje descontracturante bogota, masaje en pareja y masaje terapéutico. Reserva tu cita ahora.">
-    <title>Masaje Relajante en Bogotá | Massage Spa Natalia Ruiz</title>
+    <meta name="description" content="Relaxing massage in Bogotá. Specialists in relaxing spa massage, back massage, decontracting massage bogota, couples massage and therapeutic massage. Book your appointment now.">
+    <title>Relaxing Massage in Bogotá | Massage Spa Natalia Ruiz</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Base -->
-
     <link rel="stylesheet" href="style-template.css">
 
 <!-- Google tag (gtag.js) -->
@@ -26,8 +25,185 @@
 </script>
 
     
-    <!-- CSS Adicional para Catálogo -->
+    <!-- CSS Adicional para Catálogo y Traducción -->
     <style>
+        :root {
+            --color-primary: #d4a373;
+            --color-primary-dark: #b8956a;
+            --color-secondary: #2c3e50;
+            --color-accent: #25d366;
+            --color-bg: #f8f9fa;
+            --color-bg-light: #f1f3f4;
+            --color-text: #2c3e50;
+            --color-text-light: #6c757d;
+            --color-border: #e9ecef;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Playfair Display', serif;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-bg {
+            background: white;
+        }
+
+        .heading-primary {
+            font-family: var(--font-secondary);
+            font-size: 3.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .heading-secondary {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .heading-tertiary {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .text-large {
+            font-size: 1.25rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-highlight {
+            background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 70%;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, white 100%);
+            padding: 6rem 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-subtitle {
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--color-text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 163, 115, 0.4);
+        }
+
+        .btn-large {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
+
         /* Service Tabs */
         .service-tabs {
             display: flex;
@@ -188,8 +364,199 @@
             width: 20px;
             height: 20px;
         }
-        
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        /* Video Section */
+        .video-wrapper {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Location Section */
+        .location-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .location-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .location-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            fill: none;
+        }
+
+        .location-info {
+            flex: 1;
+        }
+
+        /* Language Toggle Button */
+        .language-toggle {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+            border: none;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+        }
+
+        .language-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 123, 255, 0.6);
+        }
+
+        .language-toggle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-secondary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
         @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero {
+                padding: 4rem 0;
+                min-height: auto;
+            }
+
+            .heading-primary {
+                font-size: 2.5rem;
+            }
+
+            .heading-secondary {
+                font-size: 2rem;
+            }
+
             .service-catalog.active {
                 grid-template-columns: 1fr;
             }
@@ -197,6 +564,35 @@
             .service-tab {
                 padding: 0.75rem 1.5rem;
                 font-size: 0.9rem;
+            }
+
+            .location-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .language-toggle {
+                bottom: 90px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
@@ -231,16 +627,16 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <p class="hero-subtitle">🌿 Libera Tu Estrés y Renuévate</p>
-                    <h1 class="heading-primary">Masaje Relajante en Bogotá</h1>
-                    <p class="hero-description">
-                        Experimenta el mejor <strong class="text-highlight">masaje relajante en Bogotá</strong>. Especialistas en masaje relajante spa bogotá, masaje de espalda, masaje descontracturante bogota, masaje en pareja bogota y masaje terapéutico bogota. También ofrecemos masaje tailandés, masaje deportivo bogota y masaje relajante a domicilio.
+                    <p class="hero-subtitle" data-en="🌿 Release Your Stress and Renew Yourself" data-es="🌿 Libera Tu Estrés y Renuévate">🌿 Release Your Stress and Renew Yourself</p>
+                    <h1 class="heading-primary" data-en="Relaxing Massage in Bogotá" data-es="Masaje Relajante en Bogotá">Relaxing Massage in Bogotá</h1>
+                    <p class="hero-description" data-en="Experience the best relaxing massage in Bogotá. Specialists in relaxing spa massage bogotá, back massage, decontracting massage bogota, couples massage bogota and therapeutic massage bogota. We also offer Thai massage, sports massage bogota and relaxing massage at home." data-es="Experimenta el mejor <strong class='text-highlight'>masaje relajante en Bogotá</strong>. Especialistas en masaje relajante spa bogotá, masaje de espalda, masaje descontracturante bogota, masaje en pareja bogota y masaje terapéutico bogota. También ofrecemos masaje tailandés, masaje deportivo bogota y masaje relajante a domicilio.">
+                        Experience the best relaxing massage in Bogotá. Specialists in relaxing spa massage bogotá, back massage, decontracting massage bogota, couples massage bogota and therapeutic massage bogota. We also offer Thai massage, sports massage bogota and relaxing massage at home.
                     </p>
                     <a href="#servicios" class="btn btn-primary btn-large" onclick="trackCTA('hero_ver_servicios')">
                         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                         </svg>
-                        Ver Todos los Masajes
+                        <span data-en="See All Massages" data-es="Ver Todos los Masajes">See All Massages</span>
                     </a>
                 </div>
 
@@ -248,7 +644,7 @@
                     <div class="hero-image-container">
                         <img 
                             src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=800&fit=crop" 
-                            alt="Masaje relajante spa en Bogotá"
+                            alt="Relaxing spa massage in Bogotá"
                             class="hero-image"
                             loading="eager"
                         >
@@ -261,7 +657,7 @@
     <!-- VIDEO SECTION -->
     <section class="section">
         <div class="video-wrapper">
-            <h2 class="heading-secondary">Experimenta la Relajación Total</h2>
+            <h2 class="heading-secondary" data-en="Experience Total Relaxation" data-es="Experimenta la Relajación Total">Experience Total Relaxation</h2>
             <div class="video-container">
                 <iframe src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Terapeutico.mp4" 
                         allowfullscreen
@@ -274,7 +670,7 @@
     <!-- BENEFITS SECTION -->
     <section class="section section-bg">
         <div class="container">
-            <h2 class="heading-secondary">¿Por Qué Elegir Nuestro Masaje Relajante?</h2>
+            <h2 class="heading-secondary" data-en="Why Choose Our Relaxing Massage?" data-es="¿Por Qué Elegir Nuestro Masaje Relajante?">Why Choose Our Relaxing Massage?</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="icon-wrapper">
@@ -282,8 +678,8 @@
                             <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Masaje Relajante Spa</h3>
-                    <p>Nuestro masaje relajante spa bogotá combina técnicas suaves con aromaterapia para una experiencia de relajación profunda y masaje de espalda especializado.</p>
+                    <h3 class="heading-tertiary" data-en="Relaxing Spa Massage" data-es="Masaje Relajante Spa">Relaxing Spa Massage</h3>
+                    <p data-en="Our relaxing spa massage bogotá combines gentle techniques with aromatherapy for a deep relaxation experience and specialized back massage." data-es="Nuestro masaje relajante spa bogotá combina técnicas suaves con aromaterapia para una experiencia de relajación profunda y masaje de espalda especializado.">Our relaxing spa massage bogotá combines gentle techniques with aromatherapy for a deep relaxation experience and specialized back massage.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -292,8 +688,8 @@
                             <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Masaje en Pareja</h3>
-                    <p>Disfruta de un masaje parejas bogotá en ambiente romántico. Perfecto para compartir momentos especiales en nuestro masaje relajante en pareja.</p>
+                    <h3 class="heading-tertiary" data-en="Couples Massage" data-es="Masaje en Pareja">Couples Massage</h3>
+                    <p data-en="Enjoy a couples massage bogotá in a romantic atmosphere. Perfect for sharing special moments in our relaxing couples massage." data-es="Disfruta de un masaje parejas bogotá en ambiente romántico. Perfecto para compartir momentos especiales en nuestro masaje relajante en pareja.">Enjoy a couples massage bogotá in a romantic atmosphere. Perfect for sharing special moments in our relaxing couples massage.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -302,8 +698,8 @@
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Masaje Descontracturante</h3>
-                    <p>Especialistas en masaje descontracturante bogota y masaje terapéutico bogota para aliviar contracturas musculares y tensión crónica.</p>
+                    <h3 class="heading-tertiary" data-en="Decontracting Massage" data-es="Masaje Descontracturante">Decontracting Massage</h3>
+                    <p data-en="Specialists in decontracting massage bogota and therapeutic massage bogota to relieve muscle contractions and chronic tension." data-es="Especialistas en masaje descontracturante bogota y masaje terapéutico bogota para aliviar contracturas musculares y tensión crónica.">Specialists in decontracting massage bogota and therapeutic massage bogota to relieve muscle contractions and chronic tension.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -312,8 +708,8 @@
                             <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
                         </svg>
                     </div>
-                    <h3 class="heading-tertiary">Masaje Relajante Precio Justo</h3>
-                    <p>Ofrecemos el mejor masaje relajante precio en Bogotá con calidad profesional. Masaje relajante para hombre y masaje relajante para mujer.</p>
+                    <h3 class="heading-tertiary" data-en="Fair Price Relaxing Massage" data-es="Masaje Relajante Precio Justo">Fair Price Relaxing Massage</h3>
+                    <p data-en="We offer the best relaxing massage price in Bogotá with professional quality. Relaxing massage for men and relaxing massage for women." data-es="Ofrecemos el mejor masaje relajante precio en Bogotá con calidad profesional. Masaje relajante para hombre y masaje relajante para mujer.">We offer the best relaxing massage price in Bogotá with professional quality. Relaxing massage for men and relaxing massage for women.</p>
                 </div>
             </div>
         </div>
@@ -322,21 +718,21 @@
     <!-- SERVICES CATALOG -->
     <section id="servicios" class="section">
         <div class="container">
-            <h2 class="heading-secondary">Nuestros Servicios de Masaje</h2>
-            <p class="text-large text-center" style="margin-bottom: 2rem; color: var(--color-text-light);">
-                Desde masaje relajante cuerpo completo hasta masaje deportivo bogota y masaje tailandés en bogota
+            <h2 class="heading-secondary" data-en="Our Massage Services" data-es="Nuestros Servicios de Masaje">Our Massage Services</h2>
+            <p class="text-large text-center" style="margin-bottom: 2rem; color: var(--color-text-light);" data-en="From full body relaxing massage to sports massage bogota and Thai massage in bogota" data-es="Desde masaje relajante cuerpo completo hasta masaje deportivo bogota y masaje tailandés en bogota">
+                From full body relaxing massage to sports massage bogota and Thai massage in bogota
             </p>
             
             <!-- Service Tabs -->
             <div class="service-tabs">
-                <button class="service-tab active" onclick="showCatalog('massages')">Masajes Terapéuticos</button>
-                <button class="service-tab" onclick="showCatalog('special')">Masajes Especiales</button>
-                <button class="service-tab" onclick="showCatalog('facials')">Tratamientos Faciales</button>
+                <button class="service-tab active" onclick="showCatalog('massages')" data-en="Therapeutic Massages" data-es="Masajes Terapéuticos">Therapeutic Massages</button>
+                <button class="service-tab" onclick="showCatalog('special')" data-en="Special Massages" data-es="Masajes Especiales">Special Massages</button>
+                <button class="service-tab" onclick="showCatalog('facials')" data-en="Facial Treatments" data-es="Tratamientos Faciales">Facial Treatments</button>
             </div>
 
             <!-- MASSAGES CATALOG -->
             <div id="massages" class="service-catalog active">
-                <!-- Masaje Terapéutico -->
+                <!-- Therapeutic Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -344,30 +740,30 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Terapéutico</h3>
-                        <p class="catalog-description">
-                            Masaje terapéutico bogota enfocado en aliviar tensiones musculares específicas y puntos de dolor. Combina técnicas especializadas para promover la curación y mejorar la circulación.
+                        <h3 class="catalog-title" data-en="Therapeutic Massage" data-es="Masaje Terapéutico">Therapeutic Massage</h3>
+                        <p class="catalog-description" data-en="Therapeutic massage bogota focused on relieving specific muscle tensions and pain points. Combines specialized techniques to promote healing and improve circulation." data-es="Masaje terapéutico bogota enfocado en aliviar tensiones musculares específicas y puntos de dolor. Combina técnicas especializadas para promover la curación y mejorar la circulación.">
+                            Therapeutic massage bogota focused on relieving specific muscle tensions and pain points. Combines specialized techniques to promote healing and improve circulation.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
+                                <span class="catalog-price-label" data-en="30 Minutes:" data-es="30 Minutos:">30 Minutes:</span>
                                 <span class="catalog-price-value">$121.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$200.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Terapéutico')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Therapeutic Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Masaje de Tejido Profundo -->
+                <!-- Deep Tissue Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -375,30 +771,30 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje de Tejido Profundo</h3>
-                        <p class="catalog-description">
-                            Terapia intensiva dirigida a capas musculares profundas. Ideal para aliviar dolor persistente en cuello, espalda y hombros con presión firme y movimientos profundos.
+                        <h3 class="catalog-title" data-en="Deep Tissue Massage" data-es="Masaje de Tejido Profundo">Deep Tissue Massage</h3>
+                        <p class="catalog-description" data-en="Intensive therapy directed to deep muscle layers. Ideal for relieving persistent pain in neck, back and shoulders with firm pressure and deep movements." data-es="Terapia intensiva dirigida a capas musculares profundas. Ideal para aliviar dolor persistente en cuello, espalda y hombros con presión firme y movimientos profundos.">
+                            Intensive therapy directed to deep muscle layers. Ideal for relieving persistent pain in neck, back and shoulders with firm pressure and deep movements.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
+                                <span class="catalog-price-label" data-en="30 Minutes:" data-es="30 Minutos:">30 Minutes:</span>
                                 <span class="catalog-price-value">$121.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$200.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje de Tejido Profundo')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Deep Tissue Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Masaje Deportivo -->
+                <!-- Sports Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -406,30 +802,30 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Deportivo Bogotá</h3>
-                        <p class="catalog-description">
-                            Diseñado para personas activas y atletas. Mejora el rendimiento, previene lesiones y acelera la recuperación con técnicas especializadas de masaje deportivo bogota.
+                        <h3 class="catalog-title" data-en="Sports Massage Bogotá" data-es="Masaje Deportivo Bogotá">Sports Massage Bogotá</h3>
+                        <p class="catalog-description" data-en="Designed for active people and athletes. Improves performance, prevents injuries and accelerates recovery with specialized sports massage bogota techniques." data-es="Diseñado para personas activas y atletas. Mejora el rendimiento, previene lesiones y acelera la recuperación con técnicas especializadas de masaje deportivo bogota.">
+                            Designed for active people and athletes. Improves performance, prevents injuries and accelerates recovery with specialized sports massage bogota techniques.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
+                                <span class="catalog-price-label" data-en="30 Minutes:" data-es="30 Minutos:">30 Minutes:</span>
                                 <span class="catalog-price-value">$121.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$200.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Deportivo')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Sports Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Masaje Relajante -->
+                <!-- Relaxing Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -437,211 +833,25 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Relajante</h3>
-                        <p class="catalog-description">
-                            El clásico masaje relajante en bogota con movimientos suaves, aromaterapia y aceites tibios. Perfecto masaje relajante espalda y masaje relajante cuerpo completo para aliviar el estrés.
+                        <h3 class="catalog-title" data-en="Relaxing Massage" data-es="Masaje Relajante">Relaxing Massage</h3>
+                        <p class="catalog-description" data-en="The classic relaxing massage in bogota with gentle movements, aromatherapy and warm oils. Perfect relaxing back massage and full body relaxing massage to relieve stress." data-es="El clásico masaje relajante en bogota con movimientos suaves, aromaterapia y aceites tibios. Perfecto masaje relajante espalda y masaje relajante cuerpo completo para aliviar el estrés.">
+                            The classic relaxing massage in bogota with gentle movements, aromatherapy and warm oils. Perfect relaxing back massage and full body relaxing massage to relieve stress.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
+                                <span class="catalog-price-label" data-en="30 Minutes:" data-es="30 Minutos:">30 Minutes:</span>
                                 <span class="catalog-price-value">$121.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$200.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Relajante')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Relaxing Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje Descontracturante -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Descontracturante.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Descontracturante Bogotá</h3>
-                        <p class="catalog-description">
-                            Tratamiento especializado en masaje descontracturante bogota para liberar contracturas musculares y tensión crónica. Combina masaje relajante descontracturante con presión dirigida.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Descontracturante')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje con Ventosas -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Cupping.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje con Ventosas (Cupping)</h3>
-                        <p class="catalog-description">
-                            Técnica ancestral de curación que utiliza ventosas especializadas para crear succión. Mejora el flujo sanguíneo, reduce tensión muscular y ayuda a liberar toxinas.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje con Ventosas')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje Prenatal -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Prenatal.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Prenatal</h3>
-                        <p class="catalog-description">
-                            Masaje suave y seguro especialmente diseñado para futuras madres. Alivia dolor lumbar, hinchazón en las piernas y mejora la circulación durante el embarazo.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Prenatal')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje Postparto -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/PostPartum.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Postparto</h3>
-                        <p class="catalog-description">
-                            Tratamiento especializado para nuevas madres. Ayuda a la recuperación después del parto, alivia tensión muscular, mejora circulación y brinda apoyo emocional.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Postparto')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje con Piedras Calientes -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotStone.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje con Piedras Calientes</h3>
-                        <p class="catalog-description">
-                            Tratamiento lujoso que combina masaje tradicional con piedras volcánicas calentadas. Las piedras calientes penetran profundamente, derritiendo tensión y estrés.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje con Piedras Calientes')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje Lomi Lomi -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/LomiLomi.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje Lomi Lomi</h3>
-                        <p class="catalog-description">
-                            Técnica tradicional hawaiana con movimientos fluidos y rítmicos que imitan las olas del océano. Trabaja en niveles físicos, mentales y espirituales para relajación profunda.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje Lomi Lomi')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
@@ -649,7 +859,7 @@
 
             <!-- SPECIAL MASSAGES CATALOG -->
             <div id="special" class="service-catalog">
-                <!-- Masaje en Pareja -->
+                <!-- Couples Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -657,34 +867,34 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje en Pareja</h3>
-                        <p class="catalog-description">
-                            Comparte una experiencia romántica y relajante. Disfruta de nuestro masaje parejas bogota con masajes simultáneos en un entorno tranquilo diseñado para dos. Perfecto masaje relajante en pareja.
+                        <h3 class="catalog-title" data-en="Couples Massage" data-es="Masaje en Pareja">Couples Massage</h3>
+                        <p class="catalog-description" data-en="Share a romantic and relaxing experience. Enjoy our couples massage bogota with simultaneous massages in a tranquil environment designed for two. Perfect relaxing couples massage." data-es="Comparte una experiencia romántica y relajante. Disfruta de nuestro masaje parejas bogota con masajes simultáneos en un entorno tranquilo diseñado para dos. Perfecto masaje relajante en pareja.">
+                            Share a romantic and relaxing experience. Enjoy our couples massage bogota with simultaneous massages in a tranquil environment designed for two. Perfect relaxing couples massage.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
+                                <span class="catalog-price-label" data-en="30 Minutes:" data-es="30 Minutos:">30 Minutes:</span>
                                 <span class="catalog-price-value">$200.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$484.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">90 Minutos:</span>
+                                <span class="catalog-price-label" data-en="90 Minutes:" data-es="90 Minutos:">90 Minutes:</span>
                                 <span class="catalog-price-value">$606.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje en Pareja')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Couples Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Masaje 4 Manos -->
+                <!-- 4 Hands Massage -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -692,91 +902,29 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje 4 Manos</h3>
-                        <p class="catalog-description">
-                            Experimenta el máximo lujo en relajación. Dos terapeutas expertos trabajan en perfecta sincronización para brindarte una experiencia profundamente inmersiva y terapéutica.
+                        <h3 class="catalog-title" data-en="4 Hands Massage" data-es="Masaje 4 Manos">4 Hands Massage</h3>
+                        <p class="catalog-description" data-en="Experience the ultimate luxury in relaxation. Two expert therapists work in perfect synchronization to give you a deeply immersive and therapeutic experience." data-es="Experimenta el máximo lujo en relajación. Dos terapeutas expertos trabajan en perfecta sincronización para brindarte una experiencia profundamente inmersiva y terapéutica.">
+                            Experience the ultimate luxury in relaxation. Two expert therapists work in perfect synchronization to give you a deeply immersive and therapeutic experience.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
+                                <span class="catalog-price-label" data-en="1 Hour:" data-es="1 Hora:">1 Hour:</span>
                                 <span class="catalog-price-value">$424.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">90 Minutos:</span>
+                                <span class="catalog-price-label" data-en="90 Minutes:" data-es="90 Minutos:">90 Minutes:</span>
                                 <span class="catalog-price-value">$545.000 COP</span>
                             </div>
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">2 Horas:</span>
+                                <span class="catalog-price-label" data-en="2 Hours:" data-es="2 Horas:">2 Hours:</span>
                                 <span class="catalog-price-value">$666.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje 4 Manos')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('4 Hands Massage')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje con Velas Calientes -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/HotCandle.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje con Velas Calientes</h3>
-                        <p class="catalog-description">
-                            Tratamiento indulgente que utiliza cera de vela tibia derretida que se transforma en aceite de masaje lujoso. Nutre profundamente la piel mientras combina aromaterapia con relajación.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje con Velas Calientes')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Masaje con Decoración Especial -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/DeepTissue.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Masaje con Decoración Especial</h3>
-                        <p class="catalog-description">
-                            Experiencia de masaje únicamente personalizada con ambiente especial y elementos decorativos. Perfecto para celebraciones, ocasiones especiales o momentos memorables.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">30 Minutos:</span>
-                                <span class="catalog-price-value">$121.000 COP</span>
-                            </div>
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">1 Hora:</span>
-                                <span class="catalog-price-value">$200.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Masaje con Decoración Especial')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
@@ -784,7 +932,7 @@
 
             <!-- FACIALS CATALOG -->
             <div id="facials" class="service-catalog">
-                <!-- Limpieza Facial Básica -->
+                <!-- Basic Facial -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -792,26 +940,26 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Limpieza Facial Básica</h3>
-                        <p class="catalog-description">
-                            Tratamiento facial esencial que incluye limpieza profunda, exfoliación suave, extracción ligera de puntos negros, mascarilla personalizada, tonificación, hidratación y protección solar. Perfecto para piel saludable y radiante.
+                        <h3 class="catalog-title" data-en="Basic Facial Cleansing" data-es="Limpieza Facial Básica">Basic Facial Cleansing</h3>
+                        <p class="catalog-description" data-en="Essential facial treatment that includes deep cleansing, gentle exfoliation, light blackhead extraction, personalized mask, toning, moisturizing and sun protection. Perfect for healthy and radiant skin." data-es="Tratamiento facial esencial que incluye limpieza profunda, exfoliación suave, extracción ligera de puntos negros, mascarilla personalizada, tonificación, hidratación y protección solar. Perfecto para piel saludable y radiante.">
+                            Essential facial treatment that includes deep cleansing, gentle exfoliation, light blackhead extraction, personalized mask, toning, moisturizing and sun protection. Perfect for healthy and radiant skin.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">45 Minutos:</span>
+                                <span class="catalog-price-label" data-en="45 Minutes:" data-es="45 Minutos:">45 Minutes:</span>
                                 <span class="catalog-price-value">$182.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Limpieza Facial Básica')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Basic Facial Cleansing')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Limpieza Facial Profunda -->
+                <!-- Deep Facial -->
                 <div class="catalog-card">
                     <div class="catalog-video-container">
                         <video autoplay muted loop playsinline class="catalog-video">
@@ -819,48 +967,21 @@
                         </video>
                     </div>
                     <div class="catalog-content">
-                        <h3 class="catalog-title">Limpieza Facial Profunda</h3>
-                        <p class="catalog-description">
-                            Tratamiento facial integral con análisis personalizado, yoga facial, limpieza profunda, exfoliación con carbón activado, mascarilla enzimática, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno y rodillo de jade.
+                        <h3 class="catalog-title" data-en="Deep Facial Cleansing" data-es="Limpieza Facial Profunda">Deep Facial Cleansing</h3>
+                        <p class="catalog-description" data-en="Comprehensive facial treatment with personalized analysis, facial yoga, deep cleansing, activated charcoal exfoliation, enzymatic mask, cryotherapy, lymphatic drainage, high hydration mask, collagen veil and jade roller." data-es="Tratamiento facial integral con análisis personalizado, yoga facial, limpieza profunda, exfoliación con carbón activado, mascarilla enzimática, crioterapia, drenaje linfático, mascarilla de alta hidratación, velo de colágeno y rodillo de jade.">
+                            Comprehensive facial treatment with personalized analysis, facial yoga, deep cleansing, activated charcoal exfoliation, enzymatic mask, cryotherapy, lymphatic drainage, high hydration mask, collagen veil and jade roller.
                         </p>
                         <div class="catalog-prices">
                             <div class="catalog-price-item">
-                                <span class="catalog-price-label">60 Minutos:</span>
+                                <span class="catalog-price-label" data-en="60 Minutes:" data-es="60 Minutos:">60 Minutes:</span>
                                 <span class="catalog-price-value">$206.000 COP</span>
                             </div>
                         </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Limpieza Facial Profunda')">
+                        <button class="catalog-btn" onclick="contactWhatsApp('Deep Facial Cleansing')">
                             <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                                 <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                             </svg>
-                            Reservar por WhatsApp
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tratamiento Facial Porcelana -->
-                <div class="catalog-card">
-                    <div class="catalog-video-container">
-                        <video autoplay muted loop playsinline class="catalog-video">
-                            <source src="/Videos_Massage-20251017T011030Z-1-001/Videos_Massage/Facial3.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="catalog-content">
-                        <h3 class="catalog-title">Tratamiento Facial Porcelana</h3>
-                        <p class="catalog-description">
-                            Tratamiento facial premium para lograr piel tipo porcelana. Incluye técnicas avanzadas de limpieza, exfoliación especializada, mascarillas personalizadas, extracciones profesionales, sueros rejuvenecedores, masaje facial para brillo inmediato e hidratación intensiva.
-                        </p>
-                        <div class="catalog-prices">
-                            <div class="catalog-price-item">
-                                <span class="catalog-price-label">75 Minutos:</span>
-                                <span class="catalog-price-value">$218.000 COP</span>
-                            </div>
-                        </div>
-                        <button class="catalog-btn" onclick="contactWhatsApp('Tratamiento Facial Porcelana')">
-                            <svg class="whatsapp-icon-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-                                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
-                            </svg>
-                            Reservar por WhatsApp
+                            <span data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Book via WhatsApp</span>
                         </button>
                     </div>
                 </div>
@@ -871,7 +992,7 @@
     <!-- LOCATION SECTION -->
     <section class="section section-bg">
         <div class="container-narrow">
-            <h2 class="heading-secondary">Masaje Relajante Bogotá</h2>
+            <h2 class="heading-secondary" data-en="Relaxing Massage Bogotá" data-es="Masaje Relajante Bogotá">Relaxing Massage Bogotá</h2>
             <div class="location-card">
                 <div class="location-icon">
                     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -883,28 +1004,33 @@
                     <h3 class="heading-tertiary">Massage Spa Natalia Ruiz</h3>
                     <p>Kr 13 #32-33, Teusaquillo, Bogotá</p>
                     <p style="color: var(--color-primary); margin-top: 0.5rem;">
-                        <strong>Masaje relajante spa bogota</strong> - Cerca de Chapinero
+                        <strong data-en="Relaxing spa massage bogota" data-es="Masaje relajante spa bogota">Relaxing spa massage bogota</strong> - <span data-en="Near Chapinero" data-es="Cerca de Chapinero">Near Chapinero</span>
                     </p>
                     <p style="margin-top: 1rem; color: var(--color-text-light);">
                         📞 Tel: <strong>313 877 2082</strong> | 
-                        💰 <strong>Masaje relajante precio desde $121.000</strong>
+                        💰 <strong data-en="Relaxing massage price from $121.000" data-es="Masaje relajante precio desde $121.000">Relaxing massage price from $121.000</strong>
                     </p>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-text-light);">
-                        También ofrecemos <strong>masaje relajante a domicilio</strong> en Bogotá
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--color-text-light);" data-en="We also offer relaxing massage at home in Bogotá" data-es="También ofrecemos masaje relajante a domicilio en Bogotá">
+                        We also offer relaxing massage at home in Bogotá
                     </p>
                 </div>
             </div>
             
             <div style="margin-top: 2rem; text-align: center;">
-                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('Solicitar información general')">
+                <button class="btn btn-primary btn-large" onclick="contactWhatsApp('General information request')">
                     <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.15-.48-.27-.25-.11-1.47-.72-1.69-.81-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.30-.01-.47-.01z"/>
                     </svg>
-                    Reserva Tu Masaje
+                    <span data-en="Book Your Massage" data-es="Reserva Tu Masaje">Book Your Massage</span>
                 </button>
             </div>
         </div>
     </section>
+
+    <!-- LANGUAGE TOGGLE BUTTON -->
+    <button class="language-toggle" onclick="toggleLanguage()" id="languageToggle">
+        ES
+    </button>
 
     <!-- FLOATING WHATSAPP BUTTON -->
     <div class="whatsapp-float" onclick="contactWhatsApp('')">
@@ -913,33 +1039,41 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2025 Massage Spa Natalia Ruiz | Masaje Relajante en Bogotá</p>
+        <p data-en="&copy; 2025 Massage Spa Natalia Ruiz | Relaxing Massage in Bogotá" data-es="&copy; 2025 Massage Spa Natalia Ruiz | Masaje Relajante en Bogotá">&copy; 2025 Massage Spa Natalia Ruiz | Relaxing Massage in Bogotá</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Kr 13 #32-33, Teusaquillo | Tel: 313 877 2082</p>
-        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;">
-            Masaje relajante spa • Masaje en pareja • Masaje descontracturante • Masaje terapéutico • Masaje deportivo bogota
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8;" data-en="Relaxing spa massage • Couples massage • Decontracting massage • Therapeutic massage • Sports massage bogota" data-es="Masaje relajante spa • Masaje en pareja • Masaje descontracturante • Masaje terapéutico • Masaje deportivo bogota">
+            Relaxing spa massage • Couples massage • Decontracting massage • Therapeutic massage • Sports massage bogota
         </p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Configuración
+        // Configuration
         const WHATSAPP_NUMBER = '573138772082';
         const CONVERSION_ID = 'AW-17876723428';
         const CONVERSION_LABEL = 'l-F_CJzEjeQbEOTNpMxC';
         
-        // Función para contactar por WhatsApp
+        // Language System
+        let currentLanguage = 'en'; // Start with English
+        
+        // WhatsApp Contact Function
         function contactWhatsApp(servicio) {
-            const message = `Hola! Me interesa el servicio de ${servicio}. ¿Podrían darme más información?`;
+            const messages = {
+                en: `Hello! I'm interested in the ${servicio} service. Could you give me more information?`,
+                es: `Hola! Me interesa el servicio de ${servicio}. ¿Podrían darme más información?`
+            };
+            
+            const message = messages[currentLanguage] || messages.en;
             const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
             
-            // Tracking de conversión de Google Ads
+            // Google Ads conversion tracking
             gtag('event', 'conversion', {
                 'send_to': `${CONVERSION_ID}/${CONVERSION_LABEL}`,
                 'event_category': 'Contacto WhatsApp',
                 'event_label': servicio
             });
             
-            // Abrir WhatsApp
+            // Open WhatsApp
             window.open(url, '_blank');
         }
         
@@ -951,25 +1085,25 @@
             });
         }
         
-        // Mostrar catálogos
+        // Show catalogs
         function showCatalog(catalogName) {
-            // Ocultar todos los catálogos
+            // Hide all catalogs
             document.querySelectorAll('.service-catalog').forEach(catalog => {
                 catalog.classList.remove('active');
             });
             
-            // Quitar active de todos los tabs
+            // Remove active from all tabs
             document.querySelectorAll('.service-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
-            // Mostrar el catálogo seleccionado
+            // Show selected catalog
             document.getElementById(catalogName).classList.add('active');
             
-            // Activar el tab clickeado
+            // Activate clicked tab
             event.target.classList.add('active');
             
-            // Scroll suave al catálogo
+            // Smooth scroll to catalog
             setTimeout(() => {
                 document.getElementById(catalogName).scrollIntoView({ 
                     behavior: 'smooth',
@@ -978,14 +1112,67 @@
             }, 100);
         }
         
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Language Toggle Function
+        function toggleLanguage() {
+            const newLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            setLanguage(newLanguage);
+        }
+        
+        function setLanguage(language) {
+            currentLanguage = language;
+            
+            // Update all elements with translation attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${language}`);
+                if (text) {
+                    element.innerHTML = text;
                 }
+            });
+            
+            // Update document language
+            document.documentElement.lang = language === 'es' ? 'es' : 'en';
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                const descriptions = {
+                    en: "Relaxing massage in Bogotá. Specialists in relaxing spa massage, back massage, decontracting massage bogota, couples massage and therapeutic massage. Book your appointment now.",
+                    es: "Masaje relajante en Bogotá. Especialistas en masaje relajante spa, masaje de espalda, masaje descontracturante bogota, masaje en pareja y masaje terapéutico. Reserva tu cita ahora."
+                };
+                metaDescription.content = descriptions[language];
+            }
+            
+            // Update page title
+            const titles = {
+                en: "Relaxing Massage in Bogotá | Massage Spa Natalia Ruiz",
+                es: "Masaje Relajante en Bogotá | Massage Spa Natalia Ruiz"
+            };
+            document.title = titles[language];
+            
+            // Update language toggle button
+            const toggleButton = document.getElementById('languageToggle');
+            toggleButton.textContent = language === 'en' ? 'ES' : 'EN';
+            
+            // Store language preference
+            localStorage.setItem('preferredLanguage', language);
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for stored language preference or default to English
+            const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLanguage);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
             });
         });
     </script>
