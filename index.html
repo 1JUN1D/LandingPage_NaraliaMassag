@@ -142,6 +142,128 @@
 
 </head>
 <body>
+
+    <!-- Flyer informativo / Informational notice flyer -->
+    <div id="notice-flyer" style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        border: 2px solid #c9a96e;
+        border-radius: 16px;
+        padding: 32px 36px 28px;
+        max-width: 480px;
+        width: 90%;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 40px rgba(201,169,110,0.15);
+        text-align: center;
+        font-family: 'Georgia', serif;
+        animation: flyerFadeIn 0.5s ease;
+    ">
+        <!-- Botón cerrar -->
+        <button onclick="closeFlyerNow()" style="
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: none;
+            border: none;
+            color: #c9a96e;
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+            border-radius: 50%;
+            transition: background 0.2s;
+        " title="Cerrar / Close" onmouseover="this.style.background='rgba(201,169,110,0.15)'" onmouseout="this.style.background='none'">&#x2715;</button>
+
+        <!-- Icono -->
+        <div style="font-size: 42px; margin-bottom: 12px;">&#x1F3FA;</div>
+
+        <!-- Título ES -->
+        <h2 style="color: #c9a96e; font-size: 1.1rem; margin: 0 0 6px; letter-spacing: 1px; text-transform: uppercase;">Aviso importante</h2>
+        <!-- Título EN -->
+        <h3 style="color: #a0b4c8; font-size: 0.82rem; margin: 0 0 20px; letter-spacing: 1px; text-transform: uppercase; font-weight: normal;">Important notice</h3>
+
+        <hr style="border: none; border-top: 1px solid rgba(201,169,110,0.3); margin-bottom: 20px;">
+
+        <!-- Mensaje ES -->
+        <p style="color: #f0e6d3; font-size: 0.97rem; line-height: 1.65; margin: 0 0 14px;">
+            Este es un servicio de <strong style="color:#c9a96e;">masajes terapéuticos profesionales</strong>.<br>
+            No ofrecemos masajes eróticos, tántricos ni servicios de final feliz.
+        </p>
+        <!-- Mensaje EN -->
+        <p style="color: #a0b4c8; font-size: 0.85rem; line-height: 1.6; margin: 0 0 22px; font-style: italic;">
+            This is a <strong style="color:#8aafc8;">professional therapeutic massage</strong> service.<br>
+            We do not offer erotic, tantric, or happy-ending massages.
+        </p>
+
+        <!-- Barra de progreso -->
+        <div style="background: rgba(255,255,255,0.1); border-radius: 4px; height: 4px; overflow: hidden;">
+            <div id="flyer-progress" style="
+                height: 100%;
+                background: linear-gradient(90deg, #c9a96e, #e8c97e);
+                border-radius: 4px;
+                width: 100%;
+                transition: width 4s linear;
+            "></div>
+        </div>
+        <p style="color: rgba(255,255,255,0.3); font-size: 0.7rem; margin: 8px 0 0;">Se cierra automáticamente / Closes automatically</p>
+    </div>
+
+    <!-- Overlay oscuro -->
+    <div id="notice-overlay" onclick="closeFlyerNow()" style="
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 9998;
+        cursor: pointer;
+        animation: flyerFadeIn 0.5s ease;
+    "></div>
+
+    <style>
+        @keyframes flyerFadeIn {
+            from { opacity: 0; transform: translate(-50%, -48%); }
+            to   { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        @keyframes overlayFadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes flyerFadeOut {
+            from { opacity: 1; }
+            to   { opacity: 0; pointer-events: none; }
+        }
+        #notice-flyer.closing, #notice-overlay.closing {
+            animation: flyerFadeOut 0.4s ease forwards;
+        }
+    </style>
+
+    <script>
+        (function() {
+            // Arranca la barra de progreso
+            requestAnimationFrame(function() {
+                var bar = document.getElementById('flyer-progress');
+                if (bar) { bar.style.width = '0%'; }
+            });
+
+            var flyerTimer = setTimeout(closeFlyerNow, 4000);
+
+            function closeFlyerNow() {
+                clearTimeout(flyerTimer);
+                var flyer   = document.getElementById('notice-flyer');
+                var overlay = document.getElementById('notice-overlay');
+                if (flyer)   { flyer.classList.add('closing'); }
+                if (overlay) { overlay.classList.add('closing'); }
+                setTimeout(function() {
+                    if (flyer)   flyer.remove();
+                    if (overlay) overlay.remove();
+                }, 420);
+            }
+            window.closeFlyerNow = closeFlyerNow;
+        })();
+    </script>
+
     <div class="bg-pattern"></div>
     
     <!-- Audio de fondo -->
