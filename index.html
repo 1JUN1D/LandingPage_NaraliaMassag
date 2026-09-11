@@ -244,18 +244,25 @@
 
     <script>
         (function() {
-            // Arranca la barra de progreso
-            requestAnimationFrame(function() {
-                var bar = document.getElementById('flyer-progress');
-                if (bar) { bar.style.width = '0%'; }
-            });
+            var flyer   = document.getElementById('notice-flyer');
+            var overlay = document.getElementById('notice-overlay');
+            var flyerTimer = null, started = false;
 
-            var flyerTimer = setTimeout(closeFlyerNow, 8000);
+            function startNotice() {
+                if (started || !flyer) return;
+                started = true;
+                flyer.style.display = '';
+                if (overlay) overlay.style.display = '';
+                // Arranca la barra de progreso
+                requestAnimationFrame(function() { requestAnimationFrame(function() {
+                    var bar = document.getElementById('flyer-progress');
+                    if (bar) { bar.style.width = '0%'; }
+                }); });
+                flyerTimer = setTimeout(closeFlyerNow, 8000);
+            }
 
             function closeFlyerNow() {
                 clearTimeout(flyerTimer);
-                var flyer   = document.getElementById('notice-flyer');
-                var overlay = document.getElementById('notice-overlay');
                 if (flyer)   { flyer.classList.add('closing'); }
                 if (overlay) { overlay.classList.add('closing'); }
                 setTimeout(function() {
@@ -264,6 +271,21 @@
                 }, 420);
             }
             window.closeFlyerNow = closeFlyerNow;
+
+            // Mientras la promo de Amor y Amistad esté vigente, primero sale la promo
+            // y este aviso aparece cuando la promo se cierra.
+            var promoActiva = new Date() < new Date('2026-10-01T00:00:00-05:00');
+            if (promoActiva) {
+                if (flyer)   flyer.style.display = 'none';
+                if (overlay) overlay.style.display = 'none';
+                document.addEventListener('nrp:closed', function() { setTimeout(startNotice, 450); });
+                // Respaldo: si el script de la promo no cargó, el aviso sale igual
+                window.addEventListener('load', function() {
+                    if (typeof window.openPromoAmorAmistad !== 'function') startNotice();
+                });
+            } else {
+                startNotice();
+            }
         })();
     </script>
 
@@ -1549,4 +1571,4 @@ Masaje relajante en pareja de 1 hora o 90 minutos, incluye masaje corporal, exfo
     <!-- Promo Amor y Amistad (septiembre) -->
     <script src="promo-amor-amistad.js" data-autoopen="true" defer></script>
 </body>
-</html>
+</html>

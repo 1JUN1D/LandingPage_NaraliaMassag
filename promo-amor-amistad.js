@@ -3,8 +3,9 @@
    Flyer interactivo (solo septiembre 2026)
    - Se oculta solo a partir del 1 de octubre de 2026 (hora Bogotá)
    - Uso: <script src="promo-amor-amistad.js" data-autoopen="true" defer></script>
-     data-autoopen="true"  -> se abre solo 1 vez por visita
+     data-autoopen="true"  -> se abre SOLO al cargar la página (sin clic), antes que cualquier otro aviso
      sin data-autoopen     -> solo aparece el botón flotante "Promo"
+   - Al cerrarse dispara el evento 'nrp:closed' en document (el "Aviso importante" lo usa para salir después)
    ===================================================== */
 (function () {
   'use strict';
@@ -25,7 +26,7 @@
       badge: 'Parejas',
       title: 'Plan para 2',
       price: '$449.000',
-      img: 'promo/amor-amistad-pareja.webp',
+      img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&h=560&q=75',
       alt: 'Pareja en camillas de masaje en la sala de parejas del spa',
       items: [
         'Masaje relajante 60 min',
@@ -42,8 +43,8 @@
       badge: 'Solo para ti',
       title: 'Plan para ti',
       price: '$259.000',
-      img: 'promo/amor-amistad-ella.webp',
-      alt: 'Mujer recibiendo un masaje relajante de espalda',
+      img: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?auto=format&fit=crop&w=800&h=560&q=75',
+      alt: 'Mujer relajándose durante un masaje facial en el spa',
       items: [
         'Masaje relajante 60 min',
         'Exfoliación e hidratación corporal',
@@ -181,7 +182,7 @@
 
   function planHTML(p, i) {
     return '<article class="nrp__plan' + (i === 0 ? ' is-featured' : '') + '" data-plan="' + p.id + '">' +
-      '<div class="nrp__fig"><img src="' + p.img + '" alt="' + p.alt + '" loading="lazy" width="800" height="560">' +
+      '<div class="nrp__fig"><img src="' + p.img + '" alt="' + p.alt + '" decoding="async" referrerpolicy="no-referrer" width="800" height="560">' +
         '<span class="nrp__badge">' + (i === 0 ? '💑 ' : '💆‍♀️ ') + p.badge + '</span>' +
         '<div class="nrp__price"><small>Solo</small><strong>' + p.price + '</strong></div></div>' +
       '<div class="nrp__body"><h3>' + p.title + '</h3>' +
@@ -230,7 +231,7 @@
     document.body.appendChild(fab);
     setTimeout(function () { fab.classList.add('is-in'); }, 900);
     bind();
-    if (AUTO_OPEN && !seen()) scheduleAutoOpen();
+    if (AUTO_OPEN) scheduleAutoOpen();
   }
 
   // ---------- Comportamiento ----------
@@ -249,6 +250,7 @@
     root.setAttribute('aria-hidden', 'true');
     document.documentElement.classList.remove('nrp-lock');
     if (lastFocus && lastFocus.focus) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
+    try { document.dispatchEvent(new CustomEvent('nrp:closed')); } catch (e) {}
   }
   window.openPromoAmorAmistad = open;
 
@@ -256,13 +258,9 @@
   function markSeen() { try { sessionStorage.setItem('nrpPromoSeen', '1'); } catch (e) {} }
 
   function scheduleAutoOpen() {
-    // En el inicio primero se muestra el "Aviso importante"; la promo aparece cuando ese aviso se cierra.
-    var waited = 0;
-    (function check() {
-      var notice = document.getElementById('notice-flyer');
-      if (notice && waited < 15000) { waited += 300; return setTimeout(check, 300); }
-      setTimeout(open, notice === null && waited > 0 ? 500 : 2200);
-    })();
+    // Se abre sola al cargar la página, sin esperar clic ni otros avisos.
+    // El "Aviso importante" del inicio espera a que esta promo se cierre.
+    setTimeout(open, 600);
   }
 
   function bind() {
