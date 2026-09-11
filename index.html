@@ -45,18 +45,30 @@
     <!-- FUNCIONES DE TRACKING PARA GOOGLE ADS Y META -->
     <script>
     // Función para tracking de WhatsApp (Contacto)
+    // WhatsApp se abre de inmediato (antes dependía de que Google Ads respondiera,
+    // y con bloqueadores de anuncios o en iPhone el botón no hacía nada).
     function trackWhatsAppLead(whatsappUrl, eventLabel) {
+        var win = null;
+        try { win = window.open(whatsappUrl, '_blank'); } catch (e) {}
+        if (!win) { window.location.href = whatsappUrl; }
+
         try {
-            // Google Ads Conversion
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17389033791/3XoUCLrD764bEL-y3uNA',
-                'value': 10000,
-                'currency': 'COP',
-                'event_callback': function() {
-                    window.open(whatsappUrl, '_blank');
-                }
-            });
-            
+            if (typeof gtag === 'function') {
+                // Google Ads Conversion
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17389033791/3XoUCLrD764bEL-y3uNA',
+                    'value': 10000,
+                    'currency': 'COP',
+                    'transport_type': 'beacon'
+                });
+                // Google Analytics Event
+                gtag('event', 'generate_lead', {
+                    'event_category': 'engagement',
+                    'event_label': eventLabel,
+                    'value': 1000,
+                    'transport_type': 'beacon'
+                });
+            }
             // Meta Pixel Event
             if (typeof fbq === 'function') {
                 fbq('trackCustom', 'WhatsAppContactSpa', {
@@ -65,17 +77,8 @@
                     currency: 'COP'
                 });
             }
-            
-            // Google Analytics Event
-            gtag('event', 'generate_lead', {
-                'event_category': 'engagement',
-                'event_label': eventLabel,
-                'value': 1000
-            });
-            
         } catch (error) {
             console.error('Error en tracking:', error);
-            window.open(whatsappUrl, '_blank');
         }
         return false;
     }
@@ -1543,5 +1546,7 @@ Masaje relajante en pareja de 1 hora o 90 minutos, incluye masaje corporal, exfo
             }
         });
     </script>
+    <!-- Promo Amor y Amistad (septiembre) -->
+    <script src="promo-amor-amistad.js" data-autoopen="true" defer></script>
 </body>
-</html>
+</html>
